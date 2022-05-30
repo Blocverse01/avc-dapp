@@ -10,7 +10,7 @@
 
 @layer components {
   .App {
-    @apply bg-[rgba(4,5,25,1)] font-regular-text max-w-[94.5rem] mx-auto relative overflow-x-clip min-h-screen;
+    @apply bg-[rgba(4,5,25,1)] font-regular-text max-w-[94.5rem] mx-auto relative z-0 overflow-x-clip min-h-screen;
   }
   .App-ellipsis-1 {
     @apply bg-[#3651b1] absolute top-[-6.875rem] left-[-2.955rem] lg:top-[-7.8125rem] h-[16.5038rem] w-[16.5038rem] lg:h-[48.6563rem] lg:w-[48.6563rem] lg:left-[-9.5rem] blur-[193.876px] lg:blur-[571.586px];
@@ -61,7 +61,7 @@
     @apply bg-[#7F1C97] text-white text-[.6262rem] leading-[.685rem] font-[700] lg:text-[1.25rem] lg:leading-[1.6275rem] px-[1.5rem] rounded-[2.8125rem] h-[1.8rem] lg:h-[3.5625rem] flex items-center justify-center;
   }
   .Nav-list {
-    @apply flex items-center text-white lg:text-[1.25rem] lg:leading-[1.6275rem];
+    @apply flex lg:items-center  lg:justify-center text-white lg:text-[1.25rem] lg:leading-[1.6275rem] lg:flex-row flex-col;
   }
   .lg-only {
     @apply hidden lg:block;
@@ -83,7 +83,7 @@
     @apply top-[145.06px] lg:top-[5.6413rem] absolute z-0;
   }
   .Home {
-    @apply py-[3rem] lg:py-[2.8438rem] relative z-50;
+    @apply py-[3rem] lg:py-[2.8438rem] relative z-10;
   }
   .Home-hero-header {
     @apply text-[2rem] leading-[2.1419rem] tracking-[0.08em] max-w-[14.6662rem] lg:text-[5.5794rem] uppercase font-hero lg:leading-[5.9756rem] lg:max-w-[39.8125rem] mx-auto text-white text-center;
