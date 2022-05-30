@@ -17,6 +17,11 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 function App() {
   useEffect(() => {
+    gsap.to("progress", {
+      value: 100,
+      ease: "none",
+      scrollTrigger: { scrub: 0.3 },
+    });
     const element = ref.current;
     let proxy = { skew: 0 },
       skewSetter = gsap.quickSetter(
@@ -56,6 +61,7 @@ function App() {
   const ref = useRef(null);
   return (
     <div ref={ref} className="App">
+      <progress max="100" value="0"></progress>
       <section className="App-container">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />

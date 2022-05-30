@@ -2,6 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border: none;
+  background: transparent;
+  z-index: 9999;
+}
+progress::-webkit-progress-bar {
+  background: transparent;
+}
+progress::-webkit-progress-value {
+  background: linear-gradient(
+    to left,
+    #7f1c97,
+    #3651b1,
+    #25ce7b,
+    #fdc741,
+    #ff6b01,
+    #fc4236
+  );
+  background-attachment: fixed;
+}
+progress::-moz-progress-bar {
+  background: linear-gradient(
+    to left,
+    #7f1c97,
+    #3651b1,
+    #25ce7b,
+    #fdc741,
+    #ff6b01,
+    #fc4236
+  );
+  background-attachment: fixed;
+}
+
 @layer base {
   body {
     @apply bg-[rgba(4,5,25,1)];
