@@ -19,25 +19,25 @@
     @apply bg-[#7F1C97] absolute top-[98.94px] lg:top-[491px] h-[264.06px] w-[264.06px] lg:h-[778.5px] lg:w-[778.5px] left-[233.22px] lg:left-[825px] blur-[193.876px] lg:blur-[571.586px];
   }
   .App-ellipsis-3 {
-    @apply bg-[#3651b1] absolute top-[-6.875rem] left-[-174px] lg:top-[3087px] h-[16.5038rem] w-[16.5038rem] lg:h-[48.6563rem] lg:w-[48.6563rem] lg:left-[-9.5rem] blur-[193.876px] lg:blur-[571.586px];
+    @apply bg-[#3651b1] absolute left-[-81px] top-[2411px] lg:top-[3087px] h-[16.5038rem] w-[16.5038rem] lg:h-[48.6563rem] lg:w-[48.6563rem] lg:left-[-9.5rem] blur-[193.876px] lg:blur-[571.586px];
   }
   .App-ellipsis-4 {
-    @apply bg-[#7F1C97] absolute top-[98.94px] lg:top-[3703px] h-[264.06px] w-[264.06px] lg:h-[778.5px] lg:w-[778.5px] left-[803px] lg:left-[825px] blur-[193.876px] lg:blur-[571.586px];
+    @apply bg-[#7F1C97] absolute bottom-[230px] lg:bottom-auto lg:top-[3703px] h-[264.06px] w-[264.06px] lg:h-[778.5px] lg:w-[778.5px] left-[199.5px] lg:left-[825px] blur-[193.876px] lg:blur-[571.586px];
   }
   .App-container {
     @apply z-50 relative px-[1.9375rem] lg:px-[8rem] pt-[1.6875rem] lg:pt-[3.75rem];
   }
   .App-logo {
-    @apply h-[3.0431rem] lg:h-[4.5rem];
+    @apply h-[2.2rem] lg:h-[4.5rem];
   }
   .App-header {
     @apply flex justify-between items-center;
   }
   .App-footer {
-    @apply max-w-[1058px] mx-auto text-white z-50 relative lg:mt-[16.25rem];
+    @apply max-w-[1058px] mx-auto text-white z-50 relative mt-[3.9375rem] lg:mt-[16.25rem];
   }
   .App-footer-socials {
-    @apply flex justify-center w-full lg:mb-[15.1969rem];
+    @apply flex justify-center w-full mb-[1.705rem] lg:mb-[15.1969rem];
   }
   .App-footer-socials-item {
     @apply mr-[1.9375rem] lg:mr-[10.3125rem];
@@ -49,13 +49,16 @@
     @apply font-socials-header max-w-[240px] font-[800] lg:text-[2.0531rem] lg:leading-[2.4638rem] text-center hidden lg:block lg:mb-[2.1587rem];
   }
   .App-footer-social-image {
-    @apply mx-auto w-auto lg:mt-[68.7px];
+    @apply mx-auto lg:mt-[68.7px];
+  }
+  .App-footer-social-dropdown {
+    @apply text-center hidden lg:block;
   }
   .App-footer-copyright {
-    @apply text-center lg:text-[1.5rem] lg:leading-[1.9531rem] font-medium lg:mb-[88px];
+    @apply text-center text-[.4375rem] leading-[.5694rem] lg:text-[1.5rem] lg:leading-[1.9531rem] font-medium mb-[26.67px] lg:mb-[88px];
   }
   .Nav-button {
-    @apply bg-[#7F1C97] text-white font-[700] lg:text-[1.25rem] lg:leading-[1.6275rem] px-[1.5rem] rounded-[2.8125rem] h-[3.5625rem] flex items-center justify-center;
+    @apply bg-[#7F1C97] text-white text-[.6262rem] leading-[.685rem] font-[700] lg:text-[1.25rem] lg:leading-[1.6275rem] px-[1.5rem] rounded-[2.8125rem] h-[1.8rem] lg:h-[3.5625rem] flex items-center justify-center;
   }
   .Nav-list {
     @apply flex items-center text-white lg:text-[1.25rem] lg:leading-[1.6275rem];
@@ -67,29 +70,29 @@
     @apply lg:hidden;
   }
   .page-section-padding {
-    @apply lg:pt-[13.0244rem];
+    @apply pt-[6.0981rem] lg:pt-[13.0244rem];
   }
   .page-section-header,
   .collection-name {
-    @apply text-white font-hero lg:text-[4rem] lg:leading-[4.2813rem] max-w-[28.06rem] mb-3 mx-auto text-center;
+    @apply text-white font-hero text-[1.875rem] leading-[2.0081rem] lg:text-[4rem] lg:leading-[4.2813rem] lg:max-w-[28.06rem] mb-3 mx-auto text-center;
   }
   .page-section-header {
-    @apply uppercase;
+    @apply uppercase max-w-[10.7rem] lg:max-w-[28.06rem];
   }
   .Home-curve {
-    @apply lg:top-[5.6413rem] absolute z-0;
+    @apply top-[145.06px] lg:top-[5.6413rem] absolute z-0;
   }
   .Home {
-    @apply py-[2.8438rem] relative z-50;
+    @apply py-[3rem] lg:py-[2.8438rem] relative z-50;
   }
   .Home-hero-header {
-    @apply lg:text-[5.5794rem] uppercase font-hero lg:leading-[5.9756rem] max-w-[39.8125rem] mx-auto text-white text-center;
+    @apply text-[2rem] leading-[2.1419rem] tracking-[0.08em] max-w-[14.6662rem] lg:text-[5.5794rem] uppercase font-hero lg:leading-[5.9756rem] lg:max-w-[39.8125rem] mx-auto text-white text-center;
   }
   .Home-hero-img-container {
     @apply relative mt-[.8125rem] lg:mt-6;
   }
   .Home-hero-img-1 {
-    @apply absolute top-0;
+    @apply absolute top-0 w-[149.01px] h-[180.51px] lg:h-auto lg:w-auto;
   }
   .Home-hero-img-2 {
     @apply w-[9.6931rem] h-[11.7425rem] lg:w-[26.3125rem] lg:h-[31.875rem];
@@ -100,23 +103,23 @@
     transform: rotate(9.66deg);
   }
   .Home-hero-text-container {
-    @apply border-t absolute bottom-4 lg:w-[24.0625rem] right-0 border-white pt-[1rem];
+    @apply lg:border-t lg:absolute lg:bottom-4 lg:w-[24.0625rem] lg:right-0 lg:border-white pt-[1.7237rem] lg:pt-[1rem];
   }
   .Home-hero-text {
-    @apply font-regular-text text-white max-w-[15.3125rem];
+    @apply text-[.75rem] leading-[.9762rem] lg:text-[1.25rem] lg:leading-[1.6275rem] text-white text-center mx-auto max-w-[160px] lg:mx-0 lg:text-left lg:max-w-[15.3125rem];
   }
   .Home-how-to-item-container {
-    @apply h-[47.5625rem] relative items-center justify-center flex;
+    @apply h-[13.5625rem] lg:h-[47.5625rem] relative items-center justify-center flex;
   }
   .Home-how-to-item-img {
-    @apply lg:h-[508px];
+    @apply h-[200px] lg:h-[508px];
   }
   .Home-how-to-item {
     @apply bg-[#7F1C97] rounded-[13px] absolute w-[10.5313rem] h-[4.1981rem] lg:h-[14.75rem] z-50 text-white lg:w-[37rem] flex items-center justify-center;
     backdrop-filter: blur(14px);
   }
   .Home-how-to-item-text {
-    @apply lg:text-[1.9rem] max-w-[19.5rem] mx-auto text-center;
+    @apply text-[.5694rem] leading-[.7412rem] max-w-[6.9737rem] lg:text-[1.9rem] lg:leading-[2.6037rem] lg:max-w-[19.5rem] mx-auto text-center;
   }
   .Home-collection-splide {
     @apply lg:mt-[3.1169rem];
@@ -128,10 +131,10 @@
       rgba(255, 255, 255, 0.06) 101.26%
     );
     border: 1px solid #ffffff80;
-    @apply grid grid-cols-1 gap-y-[.8419rem] md:grid-cols-2 md:gap-y-[2.2588rem] md:gap-x-[3.4375rem] py-[1.8362rem] md:py-[4.425rem] px-[1.75rem] md:px-[6.5rem] text-white max-w-[1058px] mx-auto lg:mt-[7.075rem];
+    @apply grid grid-cols-1 gap-y-[.8419rem] md:grid-cols-2 md:gap-y-[2.2588rem] md:gap-x-[3.4375rem] py-[1.8362rem] md:py-[4.425rem] px-[1.75rem] md:px-[6.5rem] text-white max-w-[304px] md:max-w-[1058px] mx-auto lg:mt-[7.075rem] mt-[2.5088rem];
   }
   .Home-contact-form-label {
-    @apply lg:text-[1.5269rem] lg:leading-[1.9875rem];
+    @apply text-[.6338rem] md:text-[1.5269rem] md:leading-[1.9875rem];
   }
   .Home-contact-form-input,
   .Home-contact-form-textarea {
@@ -140,10 +143,10 @@
     @apply rounded-[.375rem] bg-transparent w-full lg:mt-[.825rem] px-4 py-2;
   }
   .Home-contact-form-input {
-    @apply h-[3.875rem];
+    @apply h-[2.25rem] md:h-[3.875rem];
   }
   .Home-contact-form-button {
-    @apply bg-[#3651B1] text-white flex items-center justify-center w-full lg:text-[1.5269rem] lg:leading-[1.9875rem] lg:h-[82px];
+    @apply bg-[#3651B1] text-white flex items-center justify-center w-full md:text-[1.5269rem] md:leading-[1.9875rem] h-[34px] text-[.6338rem] leading-[.825rem] md:h-[82px];
     backdrop-filter: blur(14px);
     border-radius: 6px;
   }

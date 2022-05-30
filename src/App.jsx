@@ -4,7 +4,7 @@ import curve from "./curve.svg";
 import "./App.css";
 import { Outlet, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faBars } from "@fortawesome/free-solid-svg-icons";
 import instagram from "./assets/instagram.png";
 import discord from "./assets/discord.svg";
 import twitter from "./assets/twitter.png";
@@ -32,8 +32,12 @@ function App() {
                 </li>
               ))}
             </ul>
-            <button className="Nav-button mobile-only">Connect Wallet</button>
           </nav>
+          <button className="Nav-button mobile-only">Connect Wallet</button>
+          <FontAwesomeIcon
+            icon={faBars}
+            className="text-3xl lg:hidden text-white"
+          />
           <button className="Nav-button lg-only">Connect Wallet</button>
         </header>
       </section>
@@ -52,40 +56,40 @@ function App() {
           <div className="App-footer-socials-item">
             <div>
               <h3 className="App-footer-header">Follow on Instagram</h3>
-              <div className="text-center">
+              <div className="App-footer-social-dropdown">
                 <FontAwesomeIcon icon={faChevronDown} />
               </div>
             </div>
             <img
               src={instagram}
               alt="follow on instagram"
-              className="App-footer-social-image"
+              className="App-footer-social-image w-[26.55px] h-[26.55px] lg:w-[183.96px] lg:h-[183.96px]"
             />
           </div>
           <div className="App-footer-socials-item">
             <div>
               <h3 className="App-footer-header">Join Our Discord</h3>
-              <div className="text-center">
+              <div className="App-footer-social-dropdown">
                 <FontAwesomeIcon icon={faChevronDown} />
               </div>
             </div>
             <img
               src={discord}
               alt="join discord"
-              className="App-footer-social-image"
+              className="App-footer-social-image w-[38.62px] h-[28.97px] lg:w-[267.56px] lg:h-[200.68px]"
             />
           </div>
           <div className="App-footer-socials-item">
             <div>
               <h3 className="App-footer-header">Follow on Twitter</h3>
-              <div className="text-center">
+              <div className="App-footer-social-dropdown">
                 <FontAwesomeIcon icon={faChevronDown} />
               </div>
             </div>
             <img
               src={twitter}
               alt="follow on twitter"
-              className="App-footer-social-image"
+              className="App-footer-social-image w-[27.41px] h-[22.28px] lg:w-[189.86px] lg:h-[154.34px]"
             />
           </div>
         </section>

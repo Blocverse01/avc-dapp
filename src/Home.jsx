@@ -10,6 +10,24 @@ import leriq from "./assets/Rectangle4.png";
 import weirdImage from "./assets/Rectangle3.jpg";
 import avc2 from "./assets/Avc2.png";
 
+const steps = [
+  {
+    explainer: "Apply to join African Valuables Collective as a Creator.",
+    image: one,
+  },
+  { explainer: "Upload your digital content and generate NFTs.", image: two },
+  {
+    explainer:
+      " African Valuables Collective will list your NFTs across multiple marketplaces.",
+    image: three,
+  },
+  { explainer: "Manage your profile and grow your portfolio.", image: four },
+];
+const collections = [
+  { image: leriq, title: "LeriQ" },
+  { image: avc2, title: "AVC Collection" },
+];
+
 function Home() {
   return (
     <section className="Home">
@@ -30,82 +48,81 @@ function Home() {
       </div>
       <section className="page-section-padding">
         <h2 className="page-section-header">How to get started</h2>
-        <div className="-mt-[65px]">
+        <div className="grid grid-cols-1 lg:hidden mt-[33.46px] gap-8">
+          {steps.map((step, index) => (
+            <div key={index} className="Home-how-to-item-container">
+              <img
+                src={step.image}
+                alt="one"
+                className="Home-how-to-item-img"
+              />
+              <div className="Home-how-to-item">
+                <p className="Home-how-to-item-text">{step.explainer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="-mt-[65px] hidden lg:block">
           <Splide aria-label="How to get started">
-            <SplideSlide>
-              <div className="Home-how-to-item-container">
-                <img src={one} alt="one" className="Home-how-to-item-img" />
-                <div className="Home-how-to-item">
-                  <p className="Home-how-to-item-text">
-                    Apply to join African Valuables Collective as a Creator.
-                  </p>
+            {steps.map((step, index) => (
+              <SplideSlide key={index}>
+                <div className="Home-how-to-item-container">
+                  <img
+                    src={step.image}
+                    alt="one"
+                    className="Home-how-to-item-img"
+                  />
+                  <div className="Home-how-to-item">
+                    <p className="Home-how-to-item-text">{step.explainer}</p>
+                  </div>
                 </div>
-              </div>
-            </SplideSlide>
-            <SplideSlide>
-              <div className="Home-how-to-item-container">
-                <img src={two} alt="one" className="Home-how-to-item-img" />
-                <div className="Home-how-to-item">
-                  <p className="Home-how-to-item-text">
-                    Upload your digital content and generate NFTs.
-                  </p>
-                </div>
-              </div>
-            </SplideSlide>
-            <SplideSlide>
-              <div className="Home-how-to-item-container">
-                <img src={three} alt="one" className="Home-how-to-item-img" />
-                <div className="Home-how-to-item">
-                  <p className="Home-how-to-item-text">
-                    African Valuables Collective will list your NFTs across
-                    multiple marketplaces.
-                  </p>
-                </div>
-              </div>
-            </SplideSlide>
-            <SplideSlide>
-              <div className="Home-how-to-item-container">
-                <img src={four} alt="one" className="Home-how-to-item-img" />
-                <div className="Home-how-to-item">
-                  <p className="Home-how-to-item-text">
-                    Manage your profile and grow your portfolio.
-                  </p>
-                </div>
-              </div>
-            </SplideSlide>
+              </SplideSlide>
+            ))}
           </Splide>
         </div>
       </section>
       <section className="page-section-padding">
         <h2 className="page-section-header">Our Collections</h2>
-        <div className="Home-collection-splide">
-          <Splide aria-label="How to get started">
-            <SplideSlide>
-              <div className="flex lg:h-[660px] py-5 justify-center">
-                <div className="Home-hero-img-container">
-                  <img
-                    src={weirdImage}
-                    className="Home-hero-img-3"
-                    alt="heroImg1"
-                  />
-                  <img src={leriq} className="Home-hero-img-1" alt="heroImg2" />
-                  <h3 className="collection-name pt-8">LeriQ</h3>
-                </div>
+        <div className="grid grid-cols-1 lg:hidden mt-[33.46px] gap-14">
+          {collections.map((collection, index) => (
+            <div key={index} className="flex justify-center">
+              <div className="Home-hero-img-container">
+                <img
+                  src={weirdImage}
+                  className="Home-hero-img-3"
+                  alt="heroImg1"
+                />
+                <img
+                  src={collection.image}
+                  className="Home-hero-img-1"
+                  alt="heroImg2"
+                />
+                <h3 className="collection-name pt-8">{collection.title}</h3>
               </div>
-            </SplideSlide>
-            <SplideSlide>
-              <div className="flex lg:h-[660px] py-5 justify-center">
-                <div className="Home-hero-img-container">
-                  <img
-                    src={weirdImage}
-                    className="Home-hero-img-3"
-                    alt="heroImg1"
-                  />
-                  <img src={avc2} className="Home-hero-img-1" alt="heroImg2" />
-                  <h3 className="collection-name pt-8">AVC Collection</h3>
+            </div>
+          ))}
+        </div>
+        <div className="Home-collection-splide hidden lg:block">
+          <Splide aria-label="Our Collections">
+            {collections.map((collection, index) => (
+              <SplideSlide key={index}>
+                <div className="flex lg:h-[660px] py-5 justify-center">
+                  <div className="Home-hero-img-container">
+                    <img
+                      src={weirdImage}
+                      className="Home-hero-img-3"
+                      alt="heroImg1"
+                    />
+                    <img
+                      src={collection.image}
+                      className="Home-hero-img-1"
+                      alt="heroImg2"
+                    />
+                    <h3 className="collection-name pt-8">{collection.title}</h3>
+                  </div>
                 </div>
-              </div>
-            </SplideSlide>
+              </SplideSlide>
+            ))}
           </Splide>
         </div>
       </section>
@@ -147,7 +164,7 @@ function Home() {
               Your Message
             </label>
             <textarea
-              rows="7"
+              rows={6}
               id="message"
               className="Home-contact-form-textarea"
             ></textarea>
