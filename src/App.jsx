@@ -65,13 +65,13 @@ function App() {
       <section className="App-container">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <nav className="lg:flex-1">
+          <nav className={`lg:flex-1`}>
             <ul
               className={`Nav-list ${
                 modal
-                  ? "fixed lg:relative lg:p-0 left-10 backdrop-blur-md z-[9999] bg-[rgba(4,5,25,1)] lg:bg-transparent bottom-0 top-0 p-5 right-0"
+                  ? "fixed lg:relative lg:p-0 w-[230px] backdrop-blur-md z-[9999] bg-[rgba(4,5,25,1)] lg:bg-transparent bottom-0 top-0 p-5 transition-all duration-100 ease-in-out right-0"
                   : "w-0 h-0"
-              } overflow-y-hidden lg:w-full lg:h-auto transition-all duration-200 ease-out`}
+              } overflow-y-hidden overflow-x-hidden lg:w-full lg:h-auto`}
             >
               <li
                 className={`text-right mb-12 ${
@@ -102,11 +102,18 @@ function App() {
           <div className="flex justify-center flex-1 lg:hidden">
             <button className="Nav-button">Connect Wallet</button>
           </div>
-          <button onClick={() => setModalOpen(true)}>
-            <FontAwesomeIcon
-              icon={faBars}
-              className="text-3xl text-white lg:hidden"
-            />
+          <button className="mobile-only" onClick={() => setModalOpen(true)}>
+            <svg
+              width="23"
+              height="16"
+              viewBox="0 0 23 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="23" height="2" fill="white" />
+              <rect y="7" width="23" height="2" fill="white" />
+              <rect y="14" width="23" height="2" fill="white" />
+            </svg>
           </button>
           <button className="Nav-button lg-only">Connect Wallet</button>
         </header>
