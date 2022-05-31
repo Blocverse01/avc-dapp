@@ -71,7 +71,7 @@ function App() {
                 modal
                   ? "fixed lg:relative lg:p-0 left-10 backdrop-blur-md z-[9999] bg-[rgba(4,5,25,1)] lg:bg-transparent bottom-0 top-0 p-5 right-0"
                   : "w-0 h-0"
-              } overflow-y-hidden lg:w-full lg:h-auto transition-all ease-out`}
+              } overflow-y-hidden lg:w-full lg:h-auto transition-all duration-200 ease-out`}
             >
               <li
                 className={`text-right mb-12 ${
@@ -99,11 +99,13 @@ function App() {
               ))}
             </ul>
           </nav>
-          <button className="Nav-button mobile-only">Connect Wallet</button>
+          <div className="flex justify-center flex-1 lg:hidden">
+            <button className="Nav-button">Connect Wallet</button>
+          </div>
           <button onClick={() => setModalOpen(true)}>
             <FontAwesomeIcon
               icon={faBars}
-              className="text-3xl lg:hidden text-white"
+              className="text-3xl text-white lg:hidden"
             />
           </button>
           <button className="Nav-button lg-only">Connect Wallet</button>
@@ -131,7 +133,7 @@ function App() {
             <img
               src={instagram}
               alt="follow on instagram"
-              className="App-footer-social-image w-[26.55px] h-[26.55px] lg:w-[183.96px] lg:h-[183.96px]"
+              className="App-footer-social-image w-[26.55px] h-[26.55px] lg:w-[153.96px] lg:h-[153.96px] xl:w-[183.96px] xl:h-[183.96px]"
             />
           </div>
           <div className="App-footer-socials-item">
@@ -144,7 +146,7 @@ function App() {
             <img
               src={discord}
               alt="join discord"
-              className="App-footer-social-image w-[38.62px] h-[28.97px] lg:w-[267.56px] lg:h-[200.68px]"
+              className="App-footer-social-image w-[38.62px] h-[28.97px] lg:w-[237.56px] lg:h-[170.68px] xl:w-[267.56px] xl:h-[200.68px]"
             />
           </div>
           <div className="App-footer-socials-item">
@@ -157,7 +159,7 @@ function App() {
             <img
               src={twitter}
               alt="follow on twitter"
-              className="App-footer-social-image w-[27.41px] h-[22.28px] lg:w-[189.86px] lg:h-[154.34px]"
+              className="App-footer-social-image w-[27.41px] h-[22.28px] lg:w-[159.86px] lg:h-[124.34px] xl:w-[189.86px] xl:h-[154.34px]"
             />
           </div>
         </section>

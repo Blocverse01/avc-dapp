@@ -48,13 +48,13 @@ function Home() {
       </div>
       <section className="page-section-padding">
         <h2 className="page-section-header">How to get started</h2>
-        <div className="grid grid-cols-1 lg:hidden mt-[33.46px] gap-8">
+        <div className="grid grid-cols-1 md:hidden mt-[33.46px] gap-8">
           {steps.map((step, index) => (
             <div key={index} className="Home-how-to-item-container skewElem">
               <img
                 src={step.image}
                 alt="one"
-                className="Home-how-to-item-img skewElem"
+                className="Home-how-to-item-img"
               />
               <div className="Home-how-to-item">
                 <p className="Home-how-to-item-text">{step.explainer}</p>
@@ -62,17 +62,17 @@ function Home() {
             </div>
           ))}
         </div>
-        <div className="-mt-[65px] hidden lg:block">
+        <div className="lg:-mt-[65px] hidden md:block">
           <Splide aria-label="How to get started">
             {steps.map((step, index) => (
               <SplideSlide key={index}>
-                <div className="Home-how-to-item-container skewElem">
+                <div className="Home-how-to-item-container">
                   <img
                     src={step.image}
                     alt="one"
-                    className="Home-how-to-item-img skewElem"
+                    className="Home-how-to-item-img"
                   />
-                  <div className="Home-how-to-item skewElem">
+                  <div className="Home-how-to-item">
                     <p className="Home-how-to-item-text">{step.explainer}</p>
                   </div>
                 </div>
@@ -83,46 +83,42 @@ function Home() {
       </section>
       <section className="page-section-padding">
         <h2 className="page-section-header">Our Collections</h2>
-        <div className="grid grid-cols-1 lg:hidden mt-[33.46px] gap-14">
+        <div className="grid grid-cols-1 md:hidden mt-[33.46px] gap-14">
           {collections.map((collection, index) => (
-            <div key={index} className="flex justify-center skewElem">
+            <div key={index} className="flex justify-center">
               <div className="Home-hero-img-container">
                 <img
                   src={weirdImage}
-                  className="Home-hero-img-3 skewElem"
+                  className="Home-hero-img-3"
                   alt="heroImg1"
                 />
                 <img
                   src={collection.image}
-                  className="Home-hero-img-1 skewElem"
+                  className="Home-hero-img-1"
                   alt="heroImg2"
                 />
-                <h3 className="collection-name pt-8 skewElem">
-                  {collection.title}
-                </h3>
+                <h3 className="pt-8 collection-name">{collection.title}</h3>
               </div>
             </div>
           ))}
         </div>
-        <div className="Home-collection-splide hidden lg:block">
+        <div className="hidden Home-collection-splide md:block">
           <Splide aria-label="Our Collections">
             {collections.map((collection, index) => (
               <SplideSlide key={index}>
-                <div className="flex lg:h-[660px] py-5 skewElem justify-center">
-                  <div className="Home-hero-img-container skewElem">
+                <div className="flex lg:h-[560px] xl:h-[660px] py-5 justify-center">
+                  <div className="Home-hero-img-container">
                     <img
                       src={weirdImage}
-                      className="Home-hero-img-3 skewElem"
+                      className="Home-hero-img-3"
                       alt="heroImg1"
                     />
                     <img
                       src={collection.image}
-                      className="Home-hero-img-1 skewElem"
+                      className="Home-hero-img-1"
                       alt="heroImg2"
                     />
-                    <h3 className="collection-name skewElem pt-8">
-                      {collection.title}
-                    </h3>
+                    <h3 className="pt-8 collection-name">{collection.title}</h3>
                   </div>
                 </div>
               </SplideSlide>
@@ -132,7 +128,7 @@ function Home() {
       </section>
       <section className="page-section-padding">
         <h2 className="page-section-header">Get in touch</h2>
-        <form className="Home-contact-form skewElem">
+        <form className="Home-contact-form">
           <div>
             <label htmlFor="first-name" className="Home-contact-form-label">
               First Name
