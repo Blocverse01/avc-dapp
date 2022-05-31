@@ -73,13 +73,16 @@ progress::-moz-progress-bar {
     @apply bg-[#7F1C97] absolute bottom-[230px] lg:bottom-auto lg:top-[3703px] h-[264.06px] w-[264.06px] lg:h-[778.5px] lg:w-[778.5px] left-[199.5px] lg:left-[825px] blur-[193.876px] lg:blur-[571.586px];
   }
   .App-container {
-    @apply z-50 relative px-[1.9375rem] lg:px-[3rem] xl:px-[6.5rem] pt-[1.6875rem] lg:pt-[2.8rem] xl:pt-[3.75rem];
+    @apply z-50 relative px-[1.025rem] sm:px-[1.9375rem] lg:px-[2.5rem] xl:px-[3.5rem] pt-[1.6875rem] lg:pt-[2.8rem] xl:pt-[3.75rem];
   }
   .App-logo {
-    @apply h-[2.2rem] sm:h-[2.7rem] lg:h-[3.5rem] xl:h-[4.5rem];
+    @apply h-[2.2rem] sm:h-[2.7rem] lg:h-[3rem] xl:h-[4rem];
   }
   .App-header {
-    @apply flex items-center justify-between;
+    @apply flex flex-wrap items-center justify-between gap-y-4 gap-x-2;
+  }
+  .App-header * {
+    @apply flex-shrink-0;
   }
   .App-footer {
     @apply max-w-[1058px] mx-auto text-white z-50 relative mt-[3.9375rem] lg:mt-[16.25rem];
@@ -109,7 +112,7 @@ progress::-moz-progress-bar {
     @apply bg-[#7F1C97] text-white text-[.6262rem] leading-[.685rem] font-[700] lg:text-[1rem] xl:text-[1.25rem] lg:leading-[1.6275rem] px-[1.5rem] rounded-[2.8125rem] h-[1.8rem] lg:h-[3rem] xl:h-[3.5625rem] flex items-center justify-center;
   }
   .Nav-list {
-    @apply flex lg:items-center  lg:justify-center text-white lg:text-[1rem] xl:text-[1.25rem] lg:leading-[1.6275rem] lg:flex-row flex-col;
+    @apply flex lg:items-center lg:justify-center text-white lg:text-[.95rem] xl:text-[1.25rem] lg:leading-[1.6275rem] lg:flex-row flex-col;
   }
   .lg-only {
     @apply hidden lg:block;
