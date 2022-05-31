@@ -12,9 +12,9 @@ import {
   animateScroll as scroll,
 } from "react-scroll";
 import { useQuery } from "./hooks/useQuery";
-
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import WalletConnect from "./components/WalletConnect";
 
 function App() {
   const [modal, setModalOpen] = useState(false);
@@ -154,7 +154,7 @@ function App() {
                   key={index}
                   className={`${
                     index !== parseInt(navItems.length) - 1
-                      ? "mb-[2.5625rem] lg:mb-0 lg:mr-[4.5625rem]"
+                      ? "mb-[2.5625rem] lg:mb-0 lg:mr-[2.3rem] xl:mr-[3.3rem] 2xl:mr-[4.5625rem]"
                       : ""
                   } cursor-pointer hover:underline`}
                 >
@@ -176,7 +176,7 @@ function App() {
             </ul>
           </nav>
           <div className="flex justify-center flex-1 lg:hidden">
-            <button className="Nav-button">Connect Wallet</button>
+            <WalletConnect />
           </div>
           <button className="mobile-only" onClick={() => setModalOpen(true)}>
             <svg
@@ -191,7 +191,9 @@ function App() {
               <rect y="14" width="23" height="2" fill="white" />
             </svg>
           </button>
-          <button className="Nav-button lg-only">Connect Wallet</button>
+          <div className="lg-only">
+            <WalletConnect />
+          </div>
         </header>
       </section>
       <main>
