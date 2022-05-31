@@ -2,20 +2,26 @@ import { useState, useRef, useEffect } from "react";
 import logo from "./AVC_Logo-White.png";
 import curve from "./curve.svg";
 import "./App.css";
-import { Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import {
-  faChevronDown,
-  faBars,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
-import instagram from "./assets/instagram.png";
-import discord from "./assets/discord.svg";
-import twitter from "./assets/twitter.png";
+  Link as ScrollLink,
+  Events,
+  scroller,
+  animateScroll as scroll,
+} from "react-scroll";
+import { useQuery } from "./hooks/useQuery";
+
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 function App() {
+  const [modal, setModalOpen] = useState(false);
+  const location = useLocation();
+  let query = useQuery();
+  let view = query.get("view");
+
   useEffect(() => {
     gsap.to("progress", {
       value: 100,
@@ -34,7 +40,6 @@ function App() {
     ScrollTrigger.create({
       onUpdate: (self) => {
         let skew = clamp(self.getVelocity() / -300);
-        // only do something if the skew is MORE severe. Remember, we're always tweening back to 0, so if the user slows their scrolling quickly, it's more natural to just let the tween handle that smoothly rather than jumping to the smaller skew.
         if (Math.abs(skew) > Math.abs(proxy.skew)) {
           proxy.skew = skew;
           gsap.to(proxy, {
@@ -53,18 +58,77 @@ function App() {
       transformOrigin: "right center",
       force3D: true,
     });
-  }, []);
+    Events.scrollEvent.register("end", function (to, element) {
+      setModalOpen(false);
+    });
 
-  const navItems = ["Getting Started", "Our Collections", "Contact Us"];
-  const [modal, setModalOpen] = useState(false);
-  const location = useLocation();
+    let mybutton = document.getElementById("btn-back-to-top");
+    window.onscroll = function () {
+      scrollFunction();
+    };
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    mybutton.addEventListener("click", () => scroll.scrollToTop());
+  }, []);
+  useEffect(() => {
+    if (view) {
+      scroller.scrollTo(view, {
+        duration: 500,
+        spy: true,
+        smooth: true,
+        offset: 50,
+      });
+      return;
+    }
+    window.scrollTo(0, 0);
+  }, [location]);
+  const navItems = [
+    { title: "Getting Started", to: "gettingStarted" },
+    { title: "Our Collections", to: "ourCollection" },
+    { title: "Contact Us", to: "contactUs" },
+  ];
+  const isHome = location.pathname === "/";
+  const hideElipsis = !isHome ? "hidden" : "";
   const ref = useRef(null);
+
   return (
     <div ref={ref} className="App">
       <progress max="100" value="0"></progress>
+      <button
+        type="button"
+        data-mdb-ripple="true"
+        data-mdb-ripple-color="light"
+        className="App-scroll-to-top"
+        id="btn-back-to-top"
+      >
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fas"
+          className="w-4 h-4"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path
+            fill="currentColor"
+            d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"
+          ></path>
+        </svg>
+      </button>
       <section className="App-container">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <Link to="/">
+            <img src={logo} className="App-logo" alt="logo" />
+          </Link>
           <nav className={`lg:flex-1`}>
             <ul
               className={`Nav-list ${
@@ -92,9 +156,21 @@ function App() {
                     index !== parseInt(navItems.length) - 1
                       ? "mb-[2.5625rem] lg:mb-0 lg:mr-[4.5625rem]"
                       : ""
-                  }`}
+                  } cursor-pointer hover:underline`}
                 >
-                  {item}
+                  {isHome ? (
+                    <ScrollLink
+                      to={item.to}
+                      spy={true}
+                      smooth={true}
+                      offset={50}
+                      duration={500}
+                    >
+                      {item.title}
+                    </ScrollLink>
+                  ) : (
+                    <Link to={`/?view=${item.to}`}>{item.title}</Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -126,54 +202,8 @@ function App() {
       </div>
       <div className="App-ellipsis-1"></div>
       <div className="App-ellipsis-2"></div>
-      <div className="App-ellipsis-3"></div>
-      <div className="App-ellipsis-4"></div>
-      <footer className="App-footer">
-        <section className="App-footer-socials">
-          <div className="App-footer-socials-item">
-            <div>
-              <h3 className="App-footer-header">Follow on Instagram</h3>
-              <div className="App-footer-social-dropdown">
-                <FontAwesomeIcon icon={faChevronDown} />
-              </div>
-            </div>
-            <img
-              src={instagram}
-              alt="follow on instagram"
-              className="App-footer-social-image w-[26.55px] h-[26.55px] lg:w-[153.96px] lg:h-[153.96px] xl:w-[183.96px] xl:h-[183.96px]"
-            />
-          </div>
-          <div className="App-footer-socials-item">
-            <div>
-              <h3 className="App-footer-header">Join Our Discord</h3>
-              <div className="App-footer-social-dropdown">
-                <FontAwesomeIcon icon={faChevronDown} />
-              </div>
-            </div>
-            <img
-              src={discord}
-              alt="join discord"
-              className="App-footer-social-image w-[38.62px] h-[28.97px] lg:w-[237.56px] lg:h-[170.68px] xl:w-[267.56px] xl:h-[200.68px]"
-            />
-          </div>
-          <div className="App-footer-socials-item">
-            <div>
-              <h3 className="App-footer-header">Follow on Twitter</h3>
-              <div className="App-footer-social-dropdown">
-                <FontAwesomeIcon icon={faChevronDown} />
-              </div>
-            </div>
-            <img
-              src={twitter}
-              alt="follow on twitter"
-              className="App-footer-social-image w-[27.41px] h-[22.28px] lg:w-[159.86px] lg:h-[124.34px] xl:w-[189.86px] xl:h-[154.34px]"
-            />
-          </div>
-        </section>
-        <div className="App-footer-copyright">
-          (c) Copyright African Valuables Collective, 2022. All Rights Reserved.
-        </div>
-      </footer>
+      <div className={`App-ellipsis-3 ${hideElipsis}`}></div>
+      <div className={`App-ellipsis-4 ${hideElipsis}`}></div>
     </div>
   );
 }

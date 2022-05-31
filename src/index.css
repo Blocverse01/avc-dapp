@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+#btn-back-to-top {
+  position: fixed;
+  display: none;
+}
+
 progress {
   position: fixed;
   top: 0;
@@ -50,7 +55,10 @@ progress::-moz-progress-bar {
 
 @layer components {
   .App {
-    @apply bg-[rgba(4,5,25,1)] font-regular-text max-w-[94.5rem] mx-auto relative z-0 overflow-x-clip min-h-screen;
+    @apply bg-[rgba(4,5,25,1)] font-regular-text max-w-[94.5rem] mx-auto relative z-0 overflow-x-clip min-h-screen scroll-smooth;
+  }
+  .App-scroll-to-top {
+    @apply inline-block p-3 text-xs font-medium leading-tight text-white uppercase transition duration-150 ease-in-out bg-purple-600 rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg bottom-5 right-5 z-[9999];
   }
   .App-ellipsis-1 {
     @apply bg-[#3651b1] absolute top-[-6.875rem] left-[-2.955rem] lg:top-[-7.8125rem] h-[16.5038rem] w-[16.5038rem] lg:h-[48.6563rem] lg:w-[48.6563rem] lg:left-[-9.5rem] blur-[193.876px] lg:blur-[571.586px];
@@ -122,7 +130,8 @@ progress::-moz-progress-bar {
   .Home-curve {
     @apply top-[145.06px] sm:top-[85px] lg:top-[4.7413rem] xl:top-[5.6413rem] absolute z-0;
   }
-  .Home {
+  .Home,
+  .Collection-display {
     @apply py-[3rem] lg:py-[2.8438rem] lg:mt-[.375rem] relative z-10;
   }
   .Home-hero-header {
@@ -190,13 +199,31 @@ progress::-moz-progress-bar {
     backdrop-filter: blur(14px);
     border-radius: 6px;
   }
+  .Collection-name {
+    @apply text-[2rem] sm:text-[2.6rem] md:text-[2.8rem] font-hero text-white lg:text-[3.5rem] xl:text-[4.5rem] pt-[.5rem] pb-[.5rem] lg:pt-[1rem] xl:pt-[1.5rem] lg:pb-[1.5rem] xl:pb-[2.5rem] text-center;
+  }
+  .Collection-list {
+    @apply grid grid-cols-1 gap-[21.11px] md:gap-[30px] xl:gap-[120px];
+  }
   .Collection-group {
-    @apply pt-[.4294rem] sm:pt-[.876rem] md:pt-[1rem] lg:pt-[1.25rem] xl:pt-[1.5rem];
+    @apply pt-[.4294rem] lg:max-w-[1136px] lg:mx-auto sm:pt-[.876rem] md:pt-[1rem] lg:pt-[1.35rem] xl:pt-[1.6887rem] px-[.8906rem] sm:px-[1.25rem] md:px-[1.5rem] lg:px-[1.75rem] xl:px-[2rem] text-white pb-[1.2081rem] sm:pb-[1.6rem] md:pb-[1.8rem] lg:pb-[3.7rem] xl:pb-[4.75rem];
     background: linear-gradient(
       122.93deg,
       rgba(255, 255, 255, 0.28) 0.11%,
       rgba(255, 255, 255, 0.08) 101.26%
     );
     border: 1px solid #ffffff80;
+  }
+  .Collection-group-name {
+    @apply text-[.7475rem] sm:text-[1.4375rem] md:text-[1.75rem] lg:text-[2.375rem] xl:text-[2.9381rem] lg:mb-[1.125rem] font-[500];
+  }
+  .Collection-group-row {
+    @apply grid grid-cols-3 gap-x-[.3762rem] sm:gap-x-[.75rem] md:gap-x-[.85rem] lg:gap-x-[1.2rem] xl:gap-x-[1.4794rem] gap-y-[.6rem] sm:gap-y-[1.2rem] md:gap-y-[1.4rem] lg:gap-y-[1.8rem] xl:gap-y-[2.2rem];
+  }
+  .Collection-card-title {
+    @apply text-center mt-[.4294rem] sm:mt-[.543rem] md:mt-[.625rem] lg:mt-[1.6875rem] text-[.3181rem] leading-[.4138rem] sm:text-[.5rem] md:text-[.625rem] lg:text-[.875rem] xl:text-[1.25rem];
+  }
+  .Collection-card-img {
+    @apply w-[5.1706rem] h-[6.2637rem];
   }
 }

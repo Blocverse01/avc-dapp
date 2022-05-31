@@ -9,6 +9,13 @@ import four from "./assets/4.png";
 import leriq from "./assets/Rectangle4.png";
 import weirdImage from "./assets/Rectangle3.jpg";
 import avc2 from "./assets/Avc2.png";
+import { Link } from "react-router-dom";
+import instagram from "./assets/instagram.png";
+import discord from "./assets/discord.svg";
+import twitter from "./assets/twitter.png";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Element } from "react-scroll";
 
 const steps = [
   {
@@ -24,8 +31,8 @@ const steps = [
   { explainer: "Manage your profile and grow your portfolio.", image: four },
 ];
 const collections = [
-  { image: leriq, title: "LeriQ" },
-  { image: avc2, title: "AVC Collection" },
+  { id: "leriq", image: leriq, title: "LeriQ" },
+  { id: "avc-collection", image: avc2, title: "AVC Collection" },
 ];
 
 function Home() {
@@ -46,134 +53,195 @@ function Home() {
           </article>
         </div>
       </div>
-      <section className="page-section-padding">
-        <h2 className="page-section-header">How to get started</h2>
-        <div className="grid grid-cols-1 md:hidden mt-[33.46px] gap-8">
-          {steps.map((step, index) => (
-            <div key={index} className="Home-how-to-item-container skewElem">
-              <img
-                src={step.image}
-                alt="one"
-                className="Home-how-to-item-img"
-              />
-              <div className="Home-how-to-item">
-                <p className="Home-how-to-item-text">{step.explainer}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="lg:-mt-[65px] hidden md:block">
-          <Splide aria-label="How to get started">
+      <Element name="gettingStarted">
+        <section id="gettingStarted" className="page-section-padding">
+          <h2 className="page-section-header">How to get started</h2>
+          <div className="grid grid-cols-1 md:hidden mt-[33.46px] gap-8">
             {steps.map((step, index) => (
-              <SplideSlide key={index}>
-                <div className="Home-how-to-item-container">
-                  <img
-                    src={step.image}
-                    alt="one"
-                    className="Home-how-to-item-img"
-                  />
-                  <div className="Home-how-to-item">
-                    <p className="Home-how-to-item-text">{step.explainer}</p>
-                  </div>
+              <div key={index} className="Home-how-to-item-container skewElem">
+                <img
+                  src={step.image}
+                  alt="one"
+                  className="Home-how-to-item-img"
+                />
+                <div className="Home-how-to-item">
+                  <p className="Home-how-to-item-text">{step.explainer}</p>
                 </div>
-              </SplideSlide>
+              </div>
             ))}
-          </Splide>
-        </div>
-      </section>
-      <section className="page-section-padding">
-        <h2 className="page-section-header">Our Collections</h2>
-        <div className="grid grid-cols-1 md:hidden mt-[33.46px] gap-14">
-          {collections.map((collection, index) => (
-            <div key={index} className="flex justify-center">
-              <div className="Home-hero-img-container">
-                <img
-                  src={weirdImage}
-                  className="Home-hero-img-3"
-                  alt="heroImg1"
-                />
-                <img
-                  src={collection.image}
-                  className="Home-hero-img-1"
-                  alt="heroImg2"
-                />
-                <h3 className="pt-8 collection-name">{collection.title}</h3>
+          </div>
+          <div className="lg:-mt-[65px] hidden md:block">
+            <Splide aria-label="How to get started">
+              {steps.map((step, index) => (
+                <SplideSlide key={index}>
+                  <div className="Home-how-to-item-container">
+                    <img
+                      src={step.image}
+                      alt="one"
+                      className="Home-how-to-item-img"
+                    />
+                    <div className="Home-how-to-item">
+                      <p className="Home-how-to-item-text">{step.explainer}</p>
+                    </div>
+                  </div>
+                </SplideSlide>
+              ))}
+            </Splide>
+          </div>
+        </section>
+      </Element>
+      <Element name="ourCollection">
+        <section id="ourCollection" className="page-section-padding">
+          <h2 className="page-section-header">Our Collections</h2>
+          <div className="grid grid-cols-1 md:hidden mt-[33.46px] gap-14">
+            {collections.map((collection, index) => (
+              <Link
+                to={`/collections/${collection.id}`}
+                key={index}
+                className="flex justify-center"
+              >
+                <div className="Home-hero-img-container">
+                  <img
+                    src={weirdImage}
+                    className="Home-hero-img-3"
+                    alt="heroImg1"
+                  />
+                  <img
+                    src={collection.image}
+                    className="Home-hero-img-1"
+                    alt="heroImg2"
+                  />
+                  <h3 className="pt-8 collection-name">{collection.title}</h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="hidden Home-collection-splide md:block">
+            <Splide aria-label="Our Collections">
+              {collections.map((collection, index) => (
+                <SplideSlide key={index}>
+                  <Link
+                    to={`/collections/${collection.id}`}
+                    className="flex lg:h-[560px] xl:h-[660px] py-5 justify-center"
+                  >
+                    <div className="Home-hero-img-container">
+                      <img
+                        src={weirdImage}
+                        className="Home-hero-img-3"
+                        alt="heroImg1"
+                      />
+                      <img
+                        src={collection.image}
+                        className="Home-hero-img-1"
+                        alt="heroImg2"
+                      />
+                      <h3 className="pt-8 collection-name">
+                        {collection.title}
+                      </h3>
+                    </div>
+                  </Link>
+                </SplideSlide>
+              ))}
+            </Splide>
+          </div>
+        </section>
+      </Element>
+      <Element name="contactUs">
+        <section id="contactUs" className="page-section-padding">
+          <h2 className="page-section-header">Get in touch</h2>
+          <form className="Home-contact-form">
+            <div>
+              <label htmlFor="first-name" className="Home-contact-form-label">
+                First Name
+              </label>
+              <input
+                id="first-name"
+                className="Home-contact-form-input"
+                type="text"
+              />
+            </div>
+            <div>
+              <label htmlFor="last-name" className="Home-contact-form-label">
+                Last Name
+              </label>
+              <input
+                id="last-name"
+                className="Home-contact-form-input"
+                type="text"
+              />
+            </div>
+            <div className="md:col-span-2">
+              <label htmlFor="email" className="Home-contact-form-label">
+                Your E-mail
+              </label>
+              <input
+                id="email"
+                className="Home-contact-form-input"
+                type="email"
+              />
+            </div>
+            <div className="md:col-span-2">
+              <label htmlFor="message" className="Home-contact-form-label">
+                Your Message
+              </label>
+              <textarea
+                rows={6}
+                id="message"
+                className="Home-contact-form-textarea"
+              ></textarea>
+            </div>
+            <div className="md:col-span-2">
+              <button className="Home-contact-form-button">Send Message</button>
+            </div>
+          </form>
+        </section>
+      </Element>
+      <footer className="App-footer">
+        <section className="App-footer-socials">
+          <div className="App-footer-socials-item">
+            <div>
+              <h3 className="App-footer-header">Follow on Instagram</h3>
+              <div className="App-footer-social-dropdown">
+                <FontAwesomeIcon icon={faChevronDown} />
               </div>
             </div>
-          ))}
+            <img
+              src={instagram}
+              alt="follow on instagram"
+              className="App-footer-social-image w-[26.55px] h-[26.55px] lg:w-[153.96px] lg:h-[153.96px] xl:w-[183.96px] xl:h-[183.96px]"
+            />
+          </div>
+          <div className="App-footer-socials-item">
+            <div>
+              <h3 className="App-footer-header">Join Our Discord</h3>
+              <div className="App-footer-social-dropdown">
+                <FontAwesomeIcon icon={faChevronDown} />
+              </div>
+            </div>
+            <img
+              src={discord}
+              alt="join discord"
+              className="App-footer-social-image w-[38.62px] h-[28.97px] lg:w-[237.56px] lg:h-[170.68px] xl:w-[267.56px] xl:h-[200.68px]"
+            />
+          </div>
+          <div className="App-footer-socials-item">
+            <div>
+              <h3 className="App-footer-header">Follow on Twitter</h3>
+              <div className="App-footer-social-dropdown">
+                <FontAwesomeIcon icon={faChevronDown} />
+              </div>
+            </div>
+            <img
+              src={twitter}
+              alt="follow on twitter"
+              className="App-footer-social-image w-[27.41px] h-[22.28px] lg:w-[159.86px] lg:h-[124.34px] xl:w-[189.86px] xl:h-[154.34px]"
+            />
+          </div>
+        </section>
+        <div className="App-footer-copyright">
+          (c) Copyright African Valuables Collective, 2022. All Rights Reserved.
         </div>
-        <div className="hidden Home-collection-splide md:block">
-          <Splide aria-label="Our Collections">
-            {collections.map((collection, index) => (
-              <SplideSlide key={index}>
-                <div className="flex lg:h-[560px] xl:h-[660px] py-5 justify-center">
-                  <div className="Home-hero-img-container">
-                    <img
-                      src={weirdImage}
-                      className="Home-hero-img-3"
-                      alt="heroImg1"
-                    />
-                    <img
-                      src={collection.image}
-                      className="Home-hero-img-1"
-                      alt="heroImg2"
-                    />
-                    <h3 className="pt-8 collection-name">{collection.title}</h3>
-                  </div>
-                </div>
-              </SplideSlide>
-            ))}
-          </Splide>
-        </div>
-      </section>
-      <section className="page-section-padding">
-        <h2 className="page-section-header">Get in touch</h2>
-        <form className="Home-contact-form">
-          <div>
-            <label htmlFor="first-name" className="Home-contact-form-label">
-              First Name
-            </label>
-            <input
-              id="first-name"
-              className="Home-contact-form-input"
-              type="text"
-            />
-          </div>
-          <div>
-            <label htmlFor="last-name" className="Home-contact-form-label">
-              Last Name
-            </label>
-            <input
-              id="last-name"
-              className="Home-contact-form-input"
-              type="text"
-            />
-          </div>
-          <div className="md:col-span-2">
-            <label htmlFor="email" className="Home-contact-form-label">
-              Your E-mail
-            </label>
-            <input
-              id="email"
-              className="Home-contact-form-input"
-              type="email"
-            />
-          </div>
-          <div className="md:col-span-2">
-            <label htmlFor="message" className="Home-contact-form-label">
-              Your Message
-            </label>
-            <textarea
-              rows={6}
-              id="message"
-              className="Home-contact-form-textarea"
-            ></textarea>
-          </div>
-          <div className="md:col-span-2">
-            <button className="Home-contact-form-button">Send Message</button>
-          </div>
-        </form>
-      </section>
+      </footer>
     </section>
   );
 }
