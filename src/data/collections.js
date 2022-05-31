@@ -1,3 +1,3 @@
 export const collections = [
-    { title: "", group: [{ name: "" }] }
+    { id: "leriq", title: "", group: [{ name: "DiamondHeads Collection", }] }
 ]
