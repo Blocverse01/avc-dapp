@@ -205,11 +205,13 @@ function Home() {
                 <FontAwesomeIcon icon={faChevronDown} />
               </div>
             </div>
-            <img
+            <a href="https://instagram.com/african.valuables.collective?igshid=YmMyMTA2M2Y="><img
               src={instagram}
               alt="follow on instagram"
               className="App-footer-social-image w-[26.55px] h-[26.55px] lg:w-[153.96px] lg:h-[153.96px] xl:w-[183.96px] xl:h-[183.96px]"
+              to="https://instagram.com/african.valuables.collective?igshid=YmMyMTA2M2Y="
             />
+            </a>
           </div>
           <div className="App-footer-socials-item">
             <div>
@@ -231,11 +233,13 @@ function Home() {
                 <FontAwesomeIcon icon={faChevronDown} />
               </div>
             </div>
-            <img
+            <a href="https://twitter.com/afri_valuables?lang=en"><img
               src={twitter}
               alt="follow on twitter"
               className="App-footer-social-image w-[27.41px] h-[22.28px] lg:w-[159.86px] lg:h-[124.34px] xl:w-[189.86px] xl:h-[154.34px]"
+              to="https://twitter.com/afri_valuables?lang=en"
             />
+            </a>
           </div>
         </section>
         <div className="App-footer-copyright">

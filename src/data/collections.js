@@ -10,7 +10,7 @@ import fresco6 from "./collectionImages/fresco6.png";
 
 export const collections = [{
     id: "leriq", title: "LeriQ", group: [{
-        name: "Rough Diamonds Collection", items: [
+        name: "Rough Diamonds Collection (Mintng Coming Soon)", items: [
             { image: diamondHead1, title: "" }, { image: diamondHead3, title: "" },
             { image: diamondHead2, title: "" }]
     }, {
