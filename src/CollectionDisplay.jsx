@@ -8,6 +8,9 @@ function CollectionDisplay() {
   return (
     <section className="px-6 Collection-display">
       <h3 className="Collection-name">{collection.title}</h3>
+      <div className="Collection-description">
+      <h3 className="Collection-name">Minting Coming Soon</h3>
+        </div>
       <div className="Collection-list">
         {collection.group.map((group, index) => (
           <CollectionGroupCard key={index} group={group} />
