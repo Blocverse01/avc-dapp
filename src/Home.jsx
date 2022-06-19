@@ -58,7 +58,7 @@ function Home() {
           <h2 className="page-section-header">How to get started</h2>
           <div className="grid grid-cols-1 md:hidden mt-[33.46px] gap-8">
             {steps.map((step, index) => (
-              <div key={index} className="Home-how-to-item-container skewElem">
+              <div key={index} className="Home-how-to-item-container">
                 <img
                   src={step.image}
                   alt="one"

@@ -13,7 +13,7 @@ import {
 } from "react-scroll";
 import { useQuery } from "./hooks/useQuery";
 import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+//import ScrollTrigger from "gsap/ScrollTrigger";
 import WalletConnect from "./components/WalletConnect";
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
       ease: "none",
       scrollTrigger: { scrub: 0.3 },
     });
+    /*
     const element = ref.current;
     let proxy = { skew: 0 },
       skewSetter = gsap.quickSetter(
@@ -57,7 +58,7 @@ function App() {
     gsap.set(element.querySelectorAll(".skewElem"), {
       transformOrigin: "right center",
       force3D: true,
-    });
+    }); */
     Events.scrollEvent.register("end", function (to, element) {
       setModalOpen(false);
     });

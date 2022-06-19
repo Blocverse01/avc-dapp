@@ -13,12 +13,6 @@ export const collections = [{
         name: "DiamondHeads Collection", items: [
             { image: diamondHead1, title: "" }, { image: diamondHead3, title: "" },
             { image: diamondHead2, title: "" }]
-    }, {
-        name: "LeriQ EP", items: [
-            { image: diamondHead1, title: "Song Title" }, { image: diamondHead3, title: "Song Title" },
-            { image: diamondHead2, title: "Song Title" }, { image: diamondHead1, title: "Song Title" },
-            { image: diamondHead3, title: "Song Title" }, { image: diamondHead2, title: "Song Title" },
-        ]
     }]
 }, {
     id: "avc-collection", title: "AVC Collection", group: [{
