@@ -1,7 +1,7 @@
-import { parseBlob, fetchFromUrl, selectCover } from "music-metadata-browser";
+import { fetchFromUrl, selectCover } from "music-metadata-browser";
 import { useEffect, useState } from "react";
 
-const getTrackImgSrc = (mediatag) => {
+export const getTrackImgSrc = (mediatag) => {
   if (mediatag?.picture) {
     const cover = selectCover(mediatag.picture);
     return `data:${cover.format};base64,${cover.data.toString("base64")}`;

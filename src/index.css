@@ -230,10 +230,13 @@ progress::-moz-progress-bar {
     @apply w-[5.1706rem] h-[6.2637rem];
   }
   .EP-music-player {
-    @apply px-6 py-5 lg:py-8;
+    @apply lg:px-6 py-5 lg:py-8;
+  }
+  .EP-music-player-content {
+    @apply mb-[43.8px] lg:mb-[113.65px] max-w-[1098px] mx-auto grid grid-cols-1 gap-y-[7.8px] lg:flex lg:items-center;
   }
   .EP-track-list {
-    @apply py-[16.85px] px-[28.07px] max-w-[1092px] mx-auto rounded-[3.9px] lg:rounded-[13px] lg:px-[92px] lg:py-[56px];
+    @apply py-[16.85px] px-[28.07px] max-w-[1098px] mx-auto rounded-[3.9px] lg:rounded-[13px] lg:px-[92px] lg:py-[56px];
     background: linear-gradient(
       122.93deg,
       rgba(255, 255, 255, 0.28) 0.11%,
@@ -252,19 +255,22 @@ progress::-moz-progress-bar {
     @apply w-[22.27px] object-cover h-[22.27px] lg:w-[73px] lg:h-[73px] mr-3;
   }
   .Music-player__bar {
-    @apply flex items-center justify-between w-full select-none;
+    @apply w-full select-none;
+  }
+  .Music-player__bar__time__cont {
+    @apply flex items-center justify-between;
   }
   .Music-player__bar__time {
     @apply text-[#AA9BBE];
   }
   .Music-player__bar__progress__wrapper {
-    @apply flex items-center w-full bg-[#DEDDE3] p-[1.5px] lg:p-[3.3px];
+    @apply flex items-center mb-[5.67px] lg:mb-[12.48px] w-full rounded-full bg-[#DEDDE3] p-[1.5px] lg:p-[3.3px];
   }
   .Music-player__bar__progress {
-    @apply flex-1 h-[5.62px] rounded-[11.88px] lg:h-[12.37px] cursor-pointer lg:rounded-[26.15px];
+    @apply flex-1 h-[2.62px] relative rounded-[11.88px] lg:h-[5.77px] cursor-pointer lg:rounded-[26.15px];
   }
   .Music-player__bar__progress__knob {
-    @apply relative rounded-full h-[8.24px] w-[8.24px] lg:h-[18.14px] lg:w-[18.14px];
+    @apply absolute block rounded-full h-[8.24px] w-[8.24px] -bottom-[2.7px] lg:-bottom-[5px] lg:h-[18.14px] lg:w-[18.14px];
     background: linear-gradient(327.56deg, #5d24d6 19.23%, #7e74ed 81.76%);
     box-shadow: 3.2111659049987793px 3.2111659049987793px 4.81674861907959px 0px
       rgba(255, 255, 255, 0.2) inset;
@@ -272,12 +278,53 @@ progress::-moz-progress-bar {
       rgba(98, 75, 242, 0.63);
   }
   .Player-controls-card {
-    @apply lg:rounded-[20.32px] flex items-center h-[92.22px] lg:h-[199.33px];
+    @apply rounded-r-[6px] rounded-l-[6px] lg:rounded-r-[20.32px] px-[24.71px] lg:col-span-3 w-full z-0 lg:px-[53.2px] flex items-center h-[92.22px] lg:h-[199.33px];
     background: linear-gradient(
       122.93deg,
       rgba(255, 255, 255, 0.28) 0.11%,
       rgba(255, 255, 255, 0.08) 101.26%
     );
     border: 0.97px solid #ffffff80;
+  }
+  .Player-controls-card__button-wrapper {
+    @apply flex items-center justify-center;
+  }
+  .Player-controls-card__button {
+    @apply text-white rounded-full flex-shrink-0 flex items-center justify-center text-[14px] lg:text-[1.7rem];
+    background: linear-gradient(
+      159.16deg,
+      #917ce4 26.46%,
+      rgba(63, 45, 137, 0) 116.55%
+    );
+    box-shadow: 8.881006240844727px 8.881006240844727px 13.32150936126709px 0px
+      #ffffff33 inset;
+    box-shadow: 0px 4.440503120422363px 8.881006240844727px 0px #372e98a6;
+  }
+  .play {
+    @apply w-[29.46px] h-[29.46px] mx-[15.57px] lg:w-[64.83px] lg:h-[64.83px] lg:mx-[36.4px];
+  }
+  .next-prev {
+    @apply w-[16.89px] h-[16.89px] lg:w-[37.16px] lg:h-[37.16px];
+  }
+  .Current-music-card {
+    @apply relative z-30 p-[25px] rounded-[6px] lg:w-[501.92px] text-white text-[11px] leading-[16px] lg:text-[15.52px] lg:leading-[21px] 2xl:text-[11.52px] 2xl:leading-[15px] lg:rounded-[20.32px] lg:p-[41px] grid grid-cols-2 gap-[22.81px] lg:gap-[38px];
+    background: linear-gradient(
+      122.93deg,
+      rgba(255, 255, 255, 0.28) 0.11%,
+      rgba(255, 255, 255, 0.08) 101.26%
+    );
+    border: 0.57px solid #ffffff80;
+  }
+  .Current-music-card__image {
+    @apply h-[125.05px] w-[125.05px] object-cover rounded-[11.4px] lg:h-[210.63px] lg:w-[210.63px] lg:rounded-[19.21px];
+  }
+  .Current-music-card__details {
+    @apply self-center;
+  }
+  .Current-music-card__now-playing {
+    @apply mb-[6.02px] lg:mb-[9.83px];
+  }
+  .Current-music-card__title {
+    @apply font-semibold capitalize line-clamp-2 break-words mb-2;
   }
 }
