@@ -299,10 +299,10 @@ progress::-moz-progress-bar {
     @apply flex items-center mb-[5.67px] lg:mb-[12.48px] w-full rounded-full bg-[#DEDDE3] p-[3.3px];
   }
   .Music-player__bar__progress {
-    @apply flex-1 relative rounded-[11.88px] h-[5.77px] cursor-pointer lg:rounded-[26.15px];
+    @apply flex-1 relative rounded-[11.88px] h-[8px] cursor-pointer lg:rounded-[26.15px];
   }
   .Music-player__bar__progress__knob {
-    @apply absolute block rounded-full hover:scale-110 -bottom-[6px] lg:-bottom-[5px] h-[18.14px] w-[18.14px];
+    @apply absolute block rounded-full hover:scale-110 -bottom-[6px] lg:-bottom-[5px] h-[19.14px] w-[19.14px];
     background: linear-gradient(327.56deg, #5d24d6 19.23%, #7e74ed 81.76%);
     box-shadow: 3.2111659049987793px 3.2111659049987793px 4.81674861907959px 0px
       rgba(255, 255, 255, 0.2) inset;
@@ -310,7 +310,7 @@ progress::-moz-progress-bar {
       rgba(98, 75, 242, 0.63);
   }
   .Player-controls-card {
-    @apply rounded-r-[6px] rounded-l-[6px] relative z-50  lg:rounded-r-[20.32px] px-[24.71px] lg:col-span-3 w-full lg:px-[53.2px] flex items-center h-[92.22px] lg:h-[199.33px];
+    @apply rounded-r-[6px] rounded-l-[6px] relative z-50  lg:rounded-r-[20.32px] px-[24.71px] lg:col-span-3 w-full lg:px-[53.2px] flex items-center h-[122px] lg:h-[199.33px];
     background: linear-gradient(
       122.93deg,
       rgba(255, 255, 255, 0.28) 0.11%,
@@ -333,10 +333,10 @@ progress::-moz-progress-bar {
     box-shadow: 0px 4.440503120422363px 8.881006240844727px 0px #372e98a6;
   }
   .play {
-    @apply w-[29.46px] h-[29.46px] mx-[15.57px] lg:w-[64.83px] lg:h-[64.83px] lg:mx-[36.4px];
+    @apply w-[42px] h-[42px] mx-[15.57px] lg:w-[64.83px] lg:h-[64.83px] lg:mx-[36.4px];
   }
   .next-prev {
-    @apply w-[16.89px] h-[16.89px] lg:w-[37.16px] lg:h-[37.16px];
+    @apply w-[26px] h-[26px] lg:w-[37.16px] lg:h-[37.16px];
   }
   .Current-music-card {
     @apply relative z-30 p-[25px] rounded-[6px] lg:w-[501.92px] text-white text-[11px] leading-[16px] lg:text-[15.52px] lg:leading-[21px] 2xl:text-[11.52px] 2xl:leading-[15px] lg:rounded-[20.32px] lg:p-[41px] grid grid-cols-2 gap-[22.81px] lg:gap-[38px];
