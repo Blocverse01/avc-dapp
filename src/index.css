@@ -73,13 +73,13 @@ progress::-moz-progress-bar {
     @apply bg-[#7F1C97] absolute bottom-[230px] lg:bottom-auto lg:top-[3703px] h-[264.06px] w-[264.06px] lg:h-[778.5px] lg:w-[778.5px] left-[199.5px] lg:left-[825px] blur-[193.876px] lg:blur-[571.586px];
   }
   .App-container {
-    @apply z-10 relative px-[1.025rem] sm:px-[1.9375rem] lg:px-[2.5rem] xl:px-[3.5rem] pt-[1.6875rem] lg:pt-[2.8rem] xl:pt-[3.75rem];
+    @apply z-50 relative px-[1.025rem] sm:px-[1.9375rem] lg:px-[2.5rem] xl:px-[3.5rem] pt-[1.6875rem] lg:pt-[2.8rem] xl:pt-[3.75rem];
   }
   .App-logo {
     @apply h-[2.2rem] sm:h-[2.7rem] lg:h-[3rem] xl:h-[4rem];
   }
   .App-header {
-    @apply flex flex-wrap items-center justify-between gap-y-4 gap-x-2;
+    @apply relative z-[5] flex flex-wrap items-center justify-between gap-y-4 gap-x-2;
   }
   .App-header * {
     @apply flex-shrink-0;
@@ -227,14 +227,11 @@ progress::-moz-progress-bar {
     @apply bg-[#7F1C97] rounded-[8.58px] p-[13px] text-white flex font-medium text-base md:text-2xl lg:text-3xl items-center justify-center lg:mt-[39px] mx-auto w-[100px] mt-[12px] lg:w-[187.44px];
   }
   .Collection__mint-modal {
-    @apply fixed inset-0 flex justify-center items-center px-5 z-[9999];
-    backdrop-filter: blur(6px);
-  }
-  .Collection__mint-modal-child {
-    @apply relative z-[9999] flex flex-1 w-full justify-center;
+    @apply fixed inset-0 flex justify-center items-center z-[9999];
+    backdrop-filter: blur(8px);
   }
   .Collection__mint-modal__content {
-    @apply rounded-[20.32px] min-h-[30vh] text-white relative lg:min-h-[541px] p-5 lg:p-[71px] max-w-[1217px] w-full;
+    @apply rounded-[20.32px] min-h-[30vh] text-white relative lg:max-h-[341px] p-5 lg:p-[71px] max-w-[850px] w-full;
     background-color: #05051a;
     background-image: linear-gradient(
       122.93deg,
@@ -299,13 +296,13 @@ progress::-moz-progress-bar {
     @apply text-[#AA9BBE];
   }
   .Music-player__bar__progress__wrapper {
-    @apply flex items-center mb-[5.67px] lg:mb-[12.48px] w-full rounded-full bg-[#DEDDE3] p-[1.5px] lg:p-[3.3px];
+    @apply flex items-center mb-[5.67px] lg:mb-[12.48px] w-full rounded-full bg-[#DEDDE3] p-[3.3px];
   }
   .Music-player__bar__progress {
-    @apply flex-1 h-[2.62px] relative rounded-[11.88px] lg:h-[5.77px] cursor-pointer lg:rounded-[26.15px];
+    @apply flex-1 relative rounded-[11.88px] h-[5.77px] cursor-pointer lg:rounded-[26.15px];
   }
   .Music-player__bar__progress__knob {
-    @apply absolute block rounded-full hover:scale-110 h-[8.24px] w-[8.24px] -bottom-[2.7px] lg:-bottom-[5px] lg:h-[18.14px] lg:w-[18.14px];
+    @apply absolute block rounded-full hover:scale-110 -bottom-[6px] lg:-bottom-[5px] h-[18.14px] w-[18.14px];
     background: linear-gradient(327.56deg, #5d24d6 19.23%, #7e74ed 81.76%);
     box-shadow: 3.2111659049987793px 3.2111659049987793px 4.81674861907959px 0px
       rgba(255, 255, 255, 0.2) inset;

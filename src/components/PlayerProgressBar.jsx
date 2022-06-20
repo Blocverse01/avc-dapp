@@ -49,7 +49,7 @@ export default function PlayerProgressBar(props) {
         >
           <span
             className="Music-player__bar__progress__knob"
-            style={{ left: `${curPercentage - 0.8}%` }}
+            style={{ left: `${curPercentage - 1.4}%` }}
           />
         </div>
       </div>
