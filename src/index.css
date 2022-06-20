@@ -231,7 +231,7 @@ progress::-moz-progress-bar {
     backdrop-filter: blur(6px);
   }
   .Collection__mint-modal-child {
-    @apply relative z-[9999] flex justify-center;
+    @apply relative z-[9999] flex flex-1 w-full justify-center;
   }
   .Collection__mint-modal__content {
     @apply rounded-[20.32px] min-h-[30vh] text-white relative lg:min-h-[541px] p-5 lg:p-[71px] max-w-[1217px] w-full;
