@@ -209,7 +209,7 @@ progress::-moz-progress-bar {
     @apply grid grid-cols-1 gap-[21.11px] md:gap-[30px] xl:gap-[120px];
   }
   .Collection-group {
-    @apply pt-[.4294rem] lg:max-w-[1136px] lg:mx-auto sm:pt-[.876rem] md:pt-[1rem] lg:pt-[1.35rem] xl:pt-[1.6887rem] px-[.8906rem] sm:px-[1.25rem] md:px-[1.5rem] lg:px-[1.75rem] xl:px-[2rem] text-white pb-[1.2081rem] sm:pb-[1.6rem] md:pb-[1.8rem] lg:pb-[3.7rem] rounded-[3.9px] lg:rounded-[13px] xl:pb-[4.75rem];
+    @apply pt-[.4294rem] lg:w-[1136px] lg:mx-auto sm:pt-[.876rem] md:pt-[1rem] lg:pt-[1.35rem] xl:pt-[1.6887rem] px-[.8906rem] sm:px-[1.25rem] md:px-[1.5rem] lg:px-[1.75rem] xl:px-[2rem] text-white pb-[1.2081rem] sm:pb-[1.6rem] md:pb-[1.8rem] lg:pb-[3.7rem] rounded-[3.9px] lg:rounded-[13px] xl:pb-[4.75rem];
     background: linear-gradient(
       122.93deg,
       rgba(255, 255, 255, 0.28) 0.11%,
@@ -265,7 +265,7 @@ progress::-moz-progress-bar {
     @apply w-[5.1706rem] h-[6.2637rem];
   }
   .EP-music-player {
-    @apply py-5 lg:px-6 lg:py-8;
+    @apply relative z-50 py-5 lg:px-6 lg:py-8;
   }
   .EP-music-player-content {
     @apply mb-[43.8px] lg:mb-[113.65px] max-w-[1098px] mx-auto grid grid-cols-1 gap-y-[7.8px] lg:flex lg:items-center;
@@ -313,7 +313,7 @@ progress::-moz-progress-bar {
       rgba(98, 75, 242, 0.63);
   }
   .Player-controls-card {
-    @apply rounded-r-[6px] rounded-l-[6px] lg:rounded-r-[20.32px] px-[24.71px] lg:col-span-3 w-full z-0 lg:px-[53.2px] flex items-center h-[92.22px] lg:h-[199.33px];
+    @apply rounded-r-[6px] rounded-l-[6px] relative z-50  lg:rounded-r-[20.32px] px-[24.71px] lg:col-span-3 w-full lg:px-[53.2px] flex items-center h-[92.22px] lg:h-[199.33px];
     background: linear-gradient(
       122.93deg,
       rgba(255, 255, 255, 0.28) 0.11%,

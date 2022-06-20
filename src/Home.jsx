@@ -16,6 +16,7 @@ import twitter from "./assets/twitter.png";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Element } from "react-scroll";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 const steps = [
   {
@@ -41,10 +42,12 @@ function Home() {
       <h1 className="Home-hero-header skewElem">Curating African NFT Assets</h1>
       <div className="relative">
         <div className="flex justify-center">
-          <div className="Home-hero-img-container skewElem">
-            <img src={heroImg1} className="Home-hero-img-2" alt="heroImg1" />
-            <img src={heroImg2} className="Home-hero-img-1" alt="heroImg2" />
-          </div>
+          <AnimationOnScroll animateIn="animate__swing">
+            <div className="Home-hero-img-container skewElem">
+              <img src={heroImg1} className="Home-hero-img-2" alt="heroImg1" />
+              <img src={heroImg2} className="Home-hero-img-1" alt="heroImg2" />
+            </div>
+          </AnimationOnScroll>
         </div>
         <div className="Home-hero-text-container skewElem">
           <article className="Home-hero-text">
@@ -205,12 +208,13 @@ function Home() {
                 <FontAwesomeIcon icon={faChevronDown} />
               </div>
             </div>
-            <a href="https://instagram.com/african.valuables.collective?igshid=YmMyMTA2M2Y="><img
-              src={instagram}
-              alt="follow on instagram"
-              className="App-footer-social-image w-[26.55px] h-[26.55px] lg:w-[153.96px] lg:h-[153.96px] xl:w-[183.96px] xl:h-[183.96px]"
-              to="https://instagram.com/african.valuables.collective?igshid=YmMyMTA2M2Y="
-            />
+            <a href="https://instagram.com/african.valuables.collective?igshid=YmMyMTA2M2Y=">
+              <img
+                src={instagram}
+                alt="follow on instagram"
+                className="App-footer-social-image w-[26.55px] h-[26.55px] lg:w-[153.96px] lg:h-[153.96px] xl:w-[183.96px] xl:h-[183.96px]"
+                to="https://instagram.com/african.valuables.collective?igshid=YmMyMTA2M2Y="
+              />
             </a>
           </div>
           <div className="App-footer-socials-item">
@@ -233,12 +237,13 @@ function Home() {
                 <FontAwesomeIcon icon={faChevronDown} />
               </div>
             </div>
-            <a href="https://twitter.com/afri_valuables?lang=en"><img
-              src={twitter}
-              alt="follow on twitter"
-              className="App-footer-social-image w-[27.41px] h-[22.28px] lg:w-[159.86px] lg:h-[124.34px] xl:w-[189.86px] xl:h-[154.34px]"
-              to="https://twitter.com/afri_valuables?lang=en"
-            />
+            <a href="https://twitter.com/afri_valuables?lang=en">
+              <img
+                src={twitter}
+                alt="follow on twitter"
+                className="App-footer-social-image w-[27.41px] h-[22.28px] lg:w-[159.86px] lg:h-[124.34px] xl:w-[189.86px] xl:h-[154.34px]"
+                to="https://twitter.com/afri_valuables?lang=en"
+              />
             </a>
           </div>
         </section>
