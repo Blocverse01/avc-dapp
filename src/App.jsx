@@ -130,78 +130,78 @@ function App() {
         </svg>
       </button>
       <section className="App-container">
-        <AnimationOnScroll offset={0} animateIn="animate__fadeIn">
-          <header className="App-header">
+        <header className="App-header">
+          <AnimationOnScroll offset={0} animateIn="animate__fadeIn">
             <Link to="/">
               <img src={logo} className="App-logo" alt="logo" />
             </Link>
-            <nav className={`lg:flex-1`}>
-              <ul
-                className={`Nav-list ${
-                  modal
-                    ? "fixed lg:p-0 w-[230px] backdrop-blur-md z-[9999] bg-[rgba(4,5,25,1)] lg:bg-transparent bottom-0 top-0 p-5 transition-all duration-100 ease-in-out right-0"
-                    : "w-0 h-0"
-                } overflow-y-hidden overflow-x-hidden lg:w-full lg:static z-0 lg:h-auto`}
+          </AnimationOnScroll>
+          <nav className={`lg:flex-1`}>
+            <ul
+              className={`Nav-list ${
+                modal
+                  ? "fixed lg:p-0 w-[230px] backdrop-blur-md z-[9999] bg-[rgba(4,5,25,1)] lg:bg-transparent bottom-0 top-0 p-5 transition-all duration-100 ease-in-out right-0"
+                  : "w-0 h-0"
+              } overflow-y-hidden overflow-x-hidden lg:w-full lg:static z-0 lg:h-auto`}
+            >
+              <li
+                className={`text-right mb-12 ${
+                  modal ? "" : "hidden"
+                } lg:hidden`}
               >
+                <button onClick={() => setModalOpen(false)}>
+                  <FontAwesomeIcon
+                    icon={faTimes}
+                    className="text-3xl text-white"
+                  />
+                </button>
+              </li>
+              {navItems.map((item, index) => (
                 <li
-                  className={`text-right mb-12 ${
-                    modal ? "" : "hidden"
-                  } lg:hidden`}
+                  key={index}
+                  className={`${
+                    index !== parseInt(navItems.length) - 1
+                      ? "mb-[2.5625rem] lg:mb-0 lg:mr-[2.3rem] xl:mr-[3.3rem] 2xl:mr-[4.5625rem]"
+                      : ""
+                  } cursor-pointer hover:underline`}
                 >
-                  <button onClick={() => setModalOpen(false)}>
-                    <FontAwesomeIcon
-                      icon={faTimes}
-                      className="text-3xl text-white"
-                    />
-                  </button>
+                  {isHome ? (
+                    <ScrollLink
+                      to={item.to}
+                      spy={true}
+                      smooth={true}
+                      offset={50}
+                      duration={500}
+                    >
+                      {item.title}
+                    </ScrollLink>
+                  ) : (
+                    <Link to={`/?view=${item.to}`}>{item.title}</Link>
+                  )}
                 </li>
-                {navItems.map((item, index) => (
-                  <li
-                    key={index}
-                    className={`${
-                      index !== parseInt(navItems.length) - 1
-                        ? "mb-[2.5625rem] lg:mb-0 lg:mr-[2.3rem] xl:mr-[3.3rem] 2xl:mr-[4.5625rem]"
-                        : ""
-                    } cursor-pointer hover:underline`}
-                  >
-                    {isHome ? (
-                      <ScrollLink
-                        to={item.to}
-                        spy={true}
-                        smooth={true}
-                        offset={50}
-                        duration={500}
-                      >
-                        {item.title}
-                      </ScrollLink>
-                    ) : (
-                      <Link to={`/?view=${item.to}`}>{item.title}</Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <div className="flex justify-center flex-1 lg:hidden">
-              <WalletConnect />
-            </div>
-            <button className="mobile-only" onClick={() => setModalOpen(true)}>
-              <svg
-                width="23"
-                height="16"
-                viewBox="0 0 23 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="23" height="2" fill="white" />
-                <rect y="7" width="23" height="2" fill="white" />
-                <rect y="14" width="23" height="2" fill="white" />
-              </svg>
-            </button>
-            <div className="lg-only">
-              <WalletConnect />
-            </div>
-          </header>
-        </AnimationOnScroll>
+              ))}
+            </ul>
+          </nav>
+          <div className="flex justify-center flex-1 lg:hidden">
+            <WalletConnect />
+          </div>
+          <button className="mobile-only" onClick={() => setModalOpen(true)}>
+            <svg
+              width="23"
+              height="16"
+              viewBox="0 0 23 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="23" height="2" fill="white" />
+              <rect y="7" width="23" height="2" fill="white" />
+              <rect y="14" width="23" height="2" fill="white" />
+            </svg>
+          </button>
+          <div className="lg-only">
+            <WalletConnect />
+          </div>
+        </header>
       </section>
       <main>
         <Outlet />
