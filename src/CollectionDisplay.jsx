@@ -16,6 +16,14 @@ function CollectionDisplay() {
         ))}
         {isLeriq && <TokenGatedMusicPlayer />}
       </div>
+      <div className="Collection-description">
+        <h3 className="Collection-name">About Collection</h3>
+        <p>{collection.description1}</p>
+        <p>{collection.description2}</p>
+        <p>{collection.description3}</p>
+        <p>{collection.description4}</p>
+        <p>{collection.description5}</p>
+      </div>
     </section>
   );
 }

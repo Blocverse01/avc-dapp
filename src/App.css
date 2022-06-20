@@ -9,3 +9,30 @@
   font-family: "Monument Extended";
   src: url(fonts/MonumentExtended-Ultrabold.otf);
 }
+
+.show-image-enter {
+  opacity: 0.01;
+}
+
+.show-image-enter.show-image-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.show-image-leave {
+  opacity: 1;
+}
+
+.show-image-leave.show-image-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.show-image-appear {
+  opacity: 0.01;
+}
+
+.show-image-appear.show-image-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}

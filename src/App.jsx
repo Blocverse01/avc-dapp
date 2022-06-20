@@ -5,6 +5,7 @@ import "./App.css";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import "react-loading-skeleton/dist/skeleton.css";
 import {
   Link as ScrollLink,
   Events,
@@ -134,9 +135,9 @@ function App() {
             <ul
               className={`Nav-list ${
                 modal
-                  ? "fixed lg:relative lg:p-0 w-[230px] backdrop-blur-md z-[9999] bg-[rgba(4,5,25,1)] lg:bg-transparent bottom-0 top-0 p-5 transition-all duration-100 ease-in-out right-0"
+                  ? "fixed lg:p-0 w-[230px] backdrop-blur-md z-[9999] bg-[rgba(4,5,25,1)] lg:bg-transparent bottom-0 top-0 p-5 transition-all duration-100 ease-in-out right-0"
                   : "w-0 h-0"
-              } overflow-y-hidden overflow-x-hidden lg:w-full lg:h-auto`}
+              } overflow-y-hidden overflow-x-hidden lg:w-full lg:static z-0 lg:h-auto`}
             >
               <li
                 className={`text-right mb-12 ${
