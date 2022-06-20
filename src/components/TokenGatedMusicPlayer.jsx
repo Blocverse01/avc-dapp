@@ -49,6 +49,7 @@ export default function MusicPlayer() {
       </section>
       <AnimationOnScroll animateIn="animate__fadeInUp">
         <EPTrackList
+          curStream={curStream}
           setCurrentStream={setCurrentStream}
           setPlaying={setPlaying}
           trackList={tracks}

@@ -4,6 +4,7 @@ export default function EPTrackList({
   trackList,
   setCurrentStream,
   setPlaying,
+  curStream,
 }) {
   const playMe = (index) => {
     setCurrentStream(index);
@@ -17,7 +18,7 @@ export default function EPTrackList({
           className="cursor-pointer"
           onClick={() => playMe(index)}
         >
-          <EPTrack trackPath={track} />
+          <EPTrack trackPath={track} curStream={curStream} index={index} />
         </div>
       ))}
     </section>

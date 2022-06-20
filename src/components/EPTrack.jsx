@@ -10,7 +10,7 @@ export const getTrackImgSrc = (mediatag) => {
   return "";
 };
 
-export default function EPTrack({ trackPath }) {
+export default function EPTrack({ trackPath, curStream, index }) {
   const [mediaTag, setMediaTag] = useState({});
   useEffect(() => {
     async function loadTags() {
@@ -33,7 +33,11 @@ export default function EPTrack({ trackPath }) {
             <Skeleton height={50} width={50} />
           </SkeletonTheme>
         )}
-        <div className="flex-1 w-full">
+        <div
+          className={`flex-1 w-full ${
+            curStream === index ? "text-purple-300" : ""
+          }`}
+        >
           {mediaTag?.artist ? (
             <div className="w-full">
               <h3 className="w-full line-clamp-1">{mediaTag?.title}</h3>
