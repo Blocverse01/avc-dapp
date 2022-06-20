@@ -33,11 +33,13 @@ export default function EPTrack({ trackPath }) {
             <Skeleton height={50} width={50} />
           </SkeletonTheme>
         )}
-        <div>
+        <div className="flex-1 w-full">
           {mediaTag?.artist ? (
-            <div>
-              <h3>{mediaTag?.title}</h3>
-              <span>{mediaTag?.artist}</span> - <span>{mediaTag?.album}</span>
+            <div className="w-full">
+              <h3 className="w-full line-clamp-1">{mediaTag?.title}</h3>
+              <h3 className="w-full line-clamp-1">
+                {mediaTag?.artist} - {mediaTag?.album}
+              </h3>
             </div>
           ) : (
             <div className="w-full ml-5">

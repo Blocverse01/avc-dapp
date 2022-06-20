@@ -284,7 +284,7 @@ progress::-moz-progress-bar {
     @apply flex items-center text-white;
   }
   .Media-tag-img {
-    @apply w-[22.27px] object-cover h-[22.27px] lg:w-[73px] lg:h-[73px] mr-3;
+    @apply w-[45px] object-cover h-[45px] lg:w-[73px] lg:h-[73px] mr-3;
   }
   .Music-player__bar {
     @apply w-full select-none;

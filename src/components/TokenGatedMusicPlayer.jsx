@@ -29,26 +29,24 @@ export default function MusicPlayer() {
   };
   return (
     <section className="EP-music-player">
-      <AnimationOnScroll animateIn="animate__fadeInRight">
-        <section className="EP-music-player-content">
-          <div>
-            <CurrentMusicCard music={tracks[curStream]} />
-            <audio key={`player_${curStream}`} className="hidden" id="audio">
-              <source src={tracks[curStream]} />
-              Your browser does not support the <code>audio</code> element.
-            </audio>
-          </div>
-          <PlayerControlsCard
-            curTime={curTime}
-            duration={duration}
-            setClickedTime={setClickedTime}
-            playing={playing}
-            setPlaying={setPlaying}
-            chooseNextTrack={chooseNextTrack}
-            choosePrevTrack={choosePrevTrack}
-          />
-        </section>
-      </AnimationOnScroll>
+      <section className="EP-music-player-content">
+        <div>
+          <CurrentMusicCard music={tracks[curStream]} />
+          <audio key={`player_${curStream}`} className="hidden" id="audio">
+            <source src={tracks[curStream]} />
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+        </div>
+        <PlayerControlsCard
+          curTime={curTime}
+          duration={duration}
+          setClickedTime={setClickedTime}
+          playing={playing}
+          setPlaying={setPlaying}
+          chooseNextTrack={chooseNextTrack}
+          choosePrevTrack={choosePrevTrack}
+        />
+      </section>
       <AnimationOnScroll animateIn="animate__fadeInUp">
         <EPTrackList
           setCurrentStream={setCurrentStream}
