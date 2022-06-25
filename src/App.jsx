@@ -99,6 +99,7 @@ function App() {
     { title: "Getting Started", to: "gettingStarted" },
     { title: "Our Collections", to: "ourCollection" },
     { title: "Our Roadmap", to: "roadMap" },
+    { title: "Our Partners", to: "Partners" },
     { title: "Contact Us", to: "contactUs" },
   ];
   const isHome = location.pathname === "/";
