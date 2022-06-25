@@ -11,6 +11,8 @@ import weirdImage from "./assets/Rectangle3.jpg";
 import avc2 from "./assets/Avc2.png";
 import { Link } from "react-router-dom";
 import instagram from "./assets/instagram.png";
+import RoadMap from "./components/RoadMap";
+import Partners from "./components/Partners";
 import discord from "./assets/discord.svg";
 import twitter from "./assets/twitter.png";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -33,7 +35,7 @@ const steps = [
 ];
 const collections = [
   { id: "leriq", image: leriq, title: "LeriQ" },
-  { id: "avc-collection", image: avc2, title: "AVC Collection" },
+  // { id: "avc-collection", image: avc2, title: "AVC Collection" },
 ];
 
 function Home() {
@@ -149,6 +151,29 @@ function Home() {
           </div>
         </section>
       </Element>
+      
+            
+             <Link
+                to={`/collections/leriq`}
+                
+              className="Collection-group__mint-btn"
+              >
+              More Info
+            </Link>      
+               
+      <Element name="roadMap">
+        <section id="roadMap">
+        <RoadMap/> 
+        </section>                                         
+      </Element>
+
+      <Element name="partners">
+        <section id="Partners">
+        <Partners/> 
+        </section>                                         
+      </Element>
+     
+      
       <Element name="contactUs">
         <section id="contactUs" className="page-section-padding">
           <h2 className="page-section-header">Get in touch</h2>

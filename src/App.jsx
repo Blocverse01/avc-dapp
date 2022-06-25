@@ -98,6 +98,7 @@ function App() {
   const navItems = [
     { title: "Getting Started", to: "gettingStarted" },
     { title: "Our Collections", to: "ourCollection" },
+    { title: "Our Roadmap", to: "roadMap" },
     { title: "Contact Us", to: "contactUs" },
   ];
   const isHome = location.pathname === "/";
@@ -185,7 +186,7 @@ function App() {
               modal ? "hidden" : ""
             } lg:hidden`}
           >
-            <WalletConnect />
+            <WalletConnect /> 
           </div>
           <button className="mobile-only" onClick={() => setModalOpen(true)}>
             <svg
