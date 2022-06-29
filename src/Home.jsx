@@ -27,8 +27,7 @@ const steps = [
   },
   { explainer: "Upload your digital content and generate NFTs.", image: two },
   {
-    explainer:
-      " African Valuables Collective will list your NFTs across multiple marketplaces.",
+    explainer: " African Valuables Collective will list your NFTs across multiple marketplaces.",
     image: three,
   },
   { explainer: "Manage your profile and grow your portfolio.", image: four },
@@ -53,8 +52,7 @@ function Home() {
         </div>
         <div className="Home-hero-text-container skewElem">
           <article className="Home-hero-text">
-            Empowering creatives across industries of art, music, film, sports,
-            real estate and beyond
+            Empowering creatives across industries of art, music, film, sports, real estate and beyond
           </article>
         </div>
       </div>
@@ -64,11 +62,7 @@ function Home() {
           <div className="grid grid-cols-1 md:hidden mt-[33.46px] gap-8">
             {steps.map((step, index) => (
               <div key={index} className="Home-how-to-item-container">
-                <img
-                  src={step.image}
-                  alt="one"
-                  className="Home-how-to-item-img"
-                />
+                <img src={step.image} alt="one" className="Home-how-to-item-img" />
                 <div className="Home-how-to-item">
                   <p className="Home-how-to-item-text">{step.explainer}</p>
                 </div>
@@ -80,11 +74,7 @@ function Home() {
               {steps.map((step, index) => (
                 <SplideSlide key={index}>
                   <div className="Home-how-to-item-container">
-                    <img
-                      src={step.image}
-                      alt="one"
-                      className="Home-how-to-item-img"
-                    />
+                    <img src={step.image} alt="one" className="Home-how-to-item-img" />
                     <div className="Home-how-to-item">
                       <p className="Home-how-to-item-text">{step.explainer}</p>
                     </div>
@@ -100,22 +90,10 @@ function Home() {
           <h2 className="page-section-header">Our Collections</h2>
           <div className="grid grid-cols-1 md:hidden mt-[33.46px] gap-14">
             {collections.map((collection, index) => (
-              <Link
-                to={`/collections/${collection.id}`}
-                key={index}
-                className="flex justify-center"
-              >
+              <Link to={`/collections/${collection.id}`} key={index} className="flex justify-center">
                 <div className="Home-hero-img-container">
-                  <img
-                    src={weirdImage}
-                    className="Home-hero-img-3"
-                    alt="heroImg1"
-                  />
-                  <img
-                    src={collection.image}
-                    className="Home-hero-img-1"
-                    alt="heroImg2"
-                  />
+                  <img src={weirdImage} className="Home-hero-img-3" alt="heroImg1" />
+                  <img src={collection.image} className="Home-hero-img-1" alt="heroImg2" />
                   <h3 className="pt-8 collection-name">{collection.title}</h3>
                 </div>
               </Link>
@@ -130,50 +108,35 @@ function Home() {
                     className="flex lg:h-[560px] xl:h-[660px] py-5 justify-center"
                   >
                     <div className="Home-hero-img-container">
-                      <img
-                        src={weirdImage}
-                        className="Home-hero-img-3"
-                        alt="heroImg1"
-                      />
-                      <img
-                        src={collection.image}
-                        className="Home-hero-img-1"
-                        alt="heroImg2"
-                      />
-                      <h3 className="pt-8 collection-name">
-                        {collection.title}
-                      </h3>
+                      <img src={weirdImage} className="Home-hero-img-3" alt="heroImg1" />
+                      <img src={collection.image} className="Home-hero-img-1" alt="heroImg2" />
+                      <h3 className="pt-8 collection-name">{collection.title}</h3>
                     </div>
                   </Link>
                 </SplideSlide>
               ))}
             </Splide>
           </div>
+          <Link to={`/collections/leriq`} className="Collection-group__mint-btn font-medium text-base mt-3 lg:mt-3">
+            More Info
+          </Link>
         </section>
       </Element>
-      
-            
-             <Link
-                to={`/collections/leriq`}
-                
-              className="Collection-group__mint-btn"
-              >
-              More Info
-            </Link>      
-               
+
       <Element name="roadMap">
-        <section id="roadMap">
-        <RoadMap/> 
-        </section>                                         
+        <section className="page-section-padding" id="roadMap">
+          <h2 className="page-section-header">Timeline</h2>
+          <RoadMap />
+        </section>
       </Element>
 
       <Element name="partners">
-        <section id="Partners">
-        <Partners/> 
-        </section>                                         
+        <section className="page-section-padding" id="Partners">
+          <h2 className="page-section-header mb-[33.46px] lg:mb-[3.1169rem]">Partners</h2>
+          <Partners />
+        </section>
       </Element>
-     
-      
+
       <Element name="contactUs">
         <section id="contactUs" className="page-section-padding">
           <h2 className="page-section-header">Get in touch</h2>
@@ -182,41 +145,25 @@ function Home() {
               <label htmlFor="first-name" className="Home-contact-form-label">
                 First Name
               </label>
-              <input
-                id="first-name"
-                className="Home-contact-form-input"
-                type="text"
-              />
+              <input id="first-name" className="Home-contact-form-input" type="text" />
             </div>
             <div>
               <label htmlFor="last-name" className="Home-contact-form-label">
                 Last Name
               </label>
-              <input
-                id="last-name"
-                className="Home-contact-form-input"
-                type="text"
-              />
+              <input id="last-name" className="Home-contact-form-input" type="text" />
             </div>
             <div className="md:col-span-2">
               <label htmlFor="email" className="Home-contact-form-label">
                 Your E-mail
               </label>
-              <input
-                id="email"
-                className="Home-contact-form-input"
-                type="email"
-              />
+              <input id="email" className="Home-contact-form-input" type="email" />
             </div>
             <div className="md:col-span-2">
               <label htmlFor="message" className="Home-contact-form-label">
                 Your Message
               </label>
-              <textarea
-                rows={6}
-                id="message"
-                className="Home-contact-form-textarea"
-              ></textarea>
+              <textarea rows={6} id="message" className="Home-contact-form-textarea"></textarea>
             </div>
             <div className="md:col-span-2">
               <button className="Home-contact-form-button">Send Message</button>

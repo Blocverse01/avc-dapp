@@ -23,11 +23,7 @@ function CollectionDisplay() {
           </AnimationOnScroll>
           <div className="Collection-list">
             {collection.group.map((group, index) => (
-              <CollectionGroupCard
-                hasLoaded={hasLoaded}
-                key={index}
-                group={group}
-              />
+              <CollectionGroupCard hasLoaded={hasLoaded} key={index} group={group} />
             ))}
             {/*isLeriq && <TokenGatedMusicPlayer /> */}
           </div>
