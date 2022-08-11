@@ -1,6 +1,6 @@
 import React from "react";
 import Blocverse from "../assets/BlocVerse BrainStorming-1.jpg";
-import Bundle from "../assets/bundle png.png";
+import Bundle from "../assets/BNDLE_White_LOGO.svg";
 import Cent from "../assets/cent logo.png";
 
 export default function Partners() {

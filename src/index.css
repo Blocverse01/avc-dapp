@@ -309,19 +309,14 @@ progress::-moz-progress-bar {
     @apply mb-2 font-semibold capitalize break-words line-clamp-2;
   }
   .Partners {
-    @apply   md:max-w-full mx-auto py-5 px-5 md:py-8 md:px-8 lg:py-28 text-white rounded-[3.9px] lg:rounded-[13px];
-   
+    @apply md:max-w-full mx-auto py-5 px-5 md:py-8 md:px-8 lg:py-28 text-white rounded-[3.9px] lg:rounded-[13px];
   }
-  .Partner{
-    @apply lg:duration-200 lg:hover:-translate-y-5 mx-auto p-8; background: linear-gradient(122.93deg, rgba(255, 255, 255, 0.28) 0.11%, rgba(255, 255, 255, 0.08) 101.26%);
-      border: 1px solid #ffffff80;
-  }
-  /* .Partners {
-    @apply md:max-w-[700px] lg:max-w-[900px] xl:max-w-[1058px] mx-auto py-5 px-5 md:py-8 md:px-8 lg:py-28 text-white rounded-[3.9px] lg:rounded-[13px];
+  .Partner {
+    @apply lg:duration-200 lg:hover:-translate-y-5 mx-auto p-8;
     background: linear-gradient(122.93deg, rgba(255, 255, 255, 0.28) 0.11%, rgba(255, 255, 255, 0.08) 101.26%);
     border: 1px solid #ffffff80;
-  } */
+  }
   .Partners-logo {
-    @apply h-[300px] mt-10 w-[300px] md:w-[200px] md:h-[200px] lg:w-[250px] lg:h-[250px] md:object-scale-down xl:w-[320px] xl:h-[320px];
+    @apply h-[200px] mt-10 w-[200px] object-scale-down md:w-[120px] md:h-[120px] lg:w-[150px] lg:h-[150px] md:object-scale-down xl:w-[220px] xl:h-[220px];
   }
 }
