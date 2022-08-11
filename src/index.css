@@ -45,25 +45,22 @@ progress::-moz-progress-bar {
     @apply inline-block p-3 text-xs font-medium leading-tight text-white uppercase transition duration-150 ease-in-out bg-purple-600 rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg bottom-5 right-5 z-[9999];
   }
   .App-ellipsis-1 {
-    @apply bg-[#3651b1] absolute top-[-6.875rem] left-[-2.955rem] lg:top-[-7.8125rem] h-[16.5038rem] w-[16.5038rem] lg:h-[48.6563rem] lg:w-[48.6563rem] lg:left-[-9.5rem] blur-[193.876px] lg:blur-[571.586px];
+    @apply bg-[#3651b1] absolute top-[-6.875rem] left-[-2.955rem] lg:top-[-7.8125rem] h-[16.5038rem] w-[16.5038rem] lg:h-[48.6563rem] lg:w-[48.6563rem] lg:left-[-9.5rem] blur-[193.876px] lg:blur-[571.586px] rounded-full;
   }
   .App-ellipsis-2 {
-    @apply bg-[#7F1C97] absolute top-[98.94px] lg:top-[491px] h-[264.06px] w-[264.06px] lg:h-[778.5px] lg:w-[778.5px] left-[233.22px] lg:left-[825px] blur-[193.876px] lg:blur-[571.586px];
+    @apply bg-[#7F1C97] absolute top-[98.94px] lg:top-[491px] h-[264.06px] w-[264.06px] lg:h-[778.5px] lg:w-[778.5px] left-[233.22px] lg:left-[825px] blur-[193.876px] lg:blur-[571.586px] rounded-full;
   }
   .App-ellipsis-3 {
-    @apply bg-[#3651b1] absolute left-[-81px] top-[2411px] lg:top-[3087px] h-[16.5038rem] w-[16.5038rem] lg:h-[48.6563rem] lg:w-[48.6563rem] lg:left-[-9.5rem] blur-[193.876px] lg:blur-[571.586px];
+    @apply bg-[#3651b1] absolute left-[-81px] top-[2411px] lg:top-[3087px] h-[16.5038rem] w-[16.5038rem] lg:h-[48.6563rem] lg:w-[48.6563rem] lg:left-[-9.5rem] blur-[193.876px] lg:blur-[571.586px] rounded-full;
   }
   .App-ellipsis-4 {
-    @apply bg-[#7F1C97] absolute bottom-[230px] lg:bottom-auto lg:top-[3703px] h-[264.06px] w-[264.06px] lg:h-[778.5px] lg:w-[778.5px] left-[199.5px] lg:left-[825px] blur-[193.876px] lg:blur-[571.586px];
-  }
-  .App-container {
-    @apply z-50 relative px-[1.025rem] sm:px-[1.9375rem] lg:px-[2.5rem] xl:px-[3.5rem] pt-[1.6875rem] lg:pt-[2.8rem] xl:pt-[3.75rem];
+    @apply bg-[#7F1C97] absolute bottom-[230px] lg:bottom-auto lg:top-[3703px] h-[264.06px] w-[264.06px] lg:h-[778.5px] lg:w-[778.5px] left-[199.5px] lg:left-[825px] blur-[193.876px] lg:blur-[571.586px] rounded-full;
   }
   .App-logo {
     @apply h-[2.2rem] sm:h-[2.7rem] lg:h-[3rem] xl:h-[4rem];
   }
   .App-header {
-    @apply relative z-[5] flex flex-wrap items-center justify-between gap-y-4 gap-x-2;
+    @apply z-50 relative mx-[1.025rem] sm:mx-[1.9375rem] lg:mx-[2.5rem] xl:mx-[3.5rem] mt-[1.6875rem] lg:mt-[2.8rem] xl:mt-[3.75rem] flex flex-wrap items-center justify-between gap-y-4 gap-x-2;
   }
   .App-header * {
     @apply flex-shrink-0;
