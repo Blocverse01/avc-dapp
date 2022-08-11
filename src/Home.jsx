@@ -8,7 +8,6 @@ import three from "./assets/3.png";
 import four from "./assets/4.png";
 import leriq from "./assets/Rectangle4.png";
 import weirdImage from "./assets/Rectangle3.jpg";
-import avc2 from "./assets/Avc2.png";
 import { Link } from "react-router-dom";
 import instagram from "./assets/instagram.png";
 import RoadMap from "./components/RoadMap";
@@ -184,7 +183,7 @@ function Home() {
               <img
                 src={instagram}
                 alt="follow on instagram"
-                className="App-footer-social-image w-[26.55px] h-[26.55px] lg:w-[153.96px] lg:h-[153.96px] xl:w-[183.96px] xl:h-[183.96px]"
+                className="App-footer-social-image w-[26.55px] h-[26.55px] lg:w-[83.96px] lg:h-[83.96px] xl:w-[103.96px] xl:h-[103.96px]"
                 to="https://instagram.com/african.valuables.collective?igshid=YmMyMTA2M2Y="
               />
             </a>
@@ -199,7 +198,7 @@ function Home() {
             <img
               src={discord}
               alt="join discord"
-              className="App-footer-social-image w-[38.62px] h-[28.97px] lg:w-[237.56px] lg:h-[170.68px] xl:w-[267.56px] xl:h-[200.68px]"
+              className="App-footer-social-image w-[38.62px] h-[28.97px] lg:w-[137.56px] lg:h-[70.68px] xl:w-[167.56px] xl:h-[100.68px]"
             />
           </div>
           <div className="App-footer-socials-item">
@@ -213,7 +212,7 @@ function Home() {
               <img
                 src={twitter}
                 alt="follow on twitter"
-                className="App-footer-social-image w-[27.41px] h-[22.28px] lg:w-[159.86px] lg:h-[124.34px] xl:w-[189.86px] xl:h-[154.34px]"
+                className="App-footer-social-image w-[27.41px] h-[22.28px] lg:w-[89.86px] lg:h-[64.34px] xl:w-[105.86px] xl:h-[85.34px]"
                 to="https://twitter.com/afri_valuables?lang=en"
               />
             </a>
