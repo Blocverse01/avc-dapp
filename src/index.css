@@ -204,7 +204,7 @@ progress::-moz-progress-bar {
     backdrop-filter: blur(8px);
   }
   .Collection__mint-modal__content {
-    @apply rounded-[20.32px] min-h-[30vh] text-white relative lg:max-h-[341px] p-5 lg:p-[71px] max-w-[850px] w-full;
+    @apply rounded-[20.32px] min-h-[30vh] h-fit text-white relative p-5 lg:p-[71px] max-w-[850px] w-full;
     background-color: #05051a;
     background-image: linear-gradient(122.93deg, rgba(255, 255, 255, 0.28) 0.11%, rgba(255, 255, 255, 0.08) 101.26%);
     border: 0.97px solid #ffffff80;
