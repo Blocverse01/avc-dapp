@@ -19,10 +19,7 @@ function CollectionGroupCard({ group, hasLoaded }) {
             ))}
           </div>
           <div>
-            <button
-              onClick={() => setOpen(true)}
-              className="Collection-group__mint-btn"
-            >
+            <button onClick={() => setOpen(true)} className="Collection-group__mint-btn">
               Mint
             </button>
           </div>

@@ -13,8 +13,7 @@ import { useEffect } from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
 export default function MusicPlayer() {
-  const { curTime, duration, setClickedTime, playing, setPlaying } =
-    useAudioPlayer();
+  const { curTime, duration, setClickedTime, playing, setPlaying } = useAudioPlayer();
   const tracks = [track1, track2, track3, track4, track5, track6];
   const [curStream, setCurrentStream] = useState(0);
   const chooseNextTrack = () => {
@@ -47,14 +46,12 @@ export default function MusicPlayer() {
           choosePrevTrack={choosePrevTrack}
         />
       </section>
-      <AnimationOnScroll animateIn="animate__fadeInUp">
-        <EPTrackList
-          curStream={curStream}
-          setCurrentStream={setCurrentStream}
-          setPlaying={setPlaying}
-          trackList={tracks}
-        />
-      </AnimationOnScroll>
+      <EPTrackList
+        curStream={curStream}
+        setCurrentStream={setCurrentStream}
+        setPlaying={setPlaying}
+        trackList={tracks}
+      />
     </section>
   );
 }

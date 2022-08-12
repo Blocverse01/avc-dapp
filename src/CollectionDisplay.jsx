@@ -25,7 +25,7 @@ function CollectionDisplay() {
             {collection.group.map((group, index) => (
               <CollectionGroupCard hasLoaded={hasLoaded} key={index} group={group} />
             ))}
-            {/*isLeriq && <TokenGatedMusicPlayer /> */}
+            {isLeriq && <TokenGatedMusicPlayer />}
           </div>
           <div className="Collection-description">
             <h3 className="Collection-name">About Collection</h3>
