@@ -8,7 +8,7 @@ export default function RoadMap() {
         <div className="cd-timeline-block">
           <div className="cd-timeline-img cd-movie" />
           <div className="cd-timeline-content glass-card">
-            <h2>WHITELIST SALE 29th JULY</h2>
+            <h2>WHITELIST SALE 12th AUGUST</h2>
             <p>
               Whitelist sale of the Rough Diamonds Collection will begin on the 29th of July, contact the AVC team for
               more infomation
@@ -18,7 +18,7 @@ export default function RoadMap() {
         <div className="cd-timeline-block">
           <div className="cd-timeline-img cd-movie" />
           <div className="cd-timeline-content glass-card">
-            <h2>FULL SALE (credit card) 19th AUGUST</h2>
+            <h2>FULL SALE (credit card) 26th AUGUST</h2>
             <p>
               The full sale of the Rough Diamonds Collection will begin on the 19th of August and will be avaliable for
               purchase on the CENT market place.
