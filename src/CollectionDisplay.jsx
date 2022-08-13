@@ -4,9 +4,13 @@ import CollectionGroupCard from "./components/CollectionGroupCard";
 import TokenGatedMusicPlayer from "./components/TokenGatedMusicPlayer";
 import { useState, useEffect } from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import { useAccount } from "wagmi";
+import useTokenGate from "./hooks/useTokenGate";
+import MintToUnlock from "./components/MintToUnlock";
 
 function CollectionDisplay() {
   const { id } = useParams();
+  const { address } = useAccount();
   const [hasLoaded, setHasLoaded] = useState(false);
   const [collection, setCollection] = useState(null);
   useEffect(() => {
@@ -14,6 +18,8 @@ function CollectionDisplay() {
     setCollection(collections.find((item) => item.id === id));
   }, []);
   const isLeriq = collection?.id === "leriq";
+  const contract_address = import.meta.env.VITE_NFT_ADDRESS;
+  const { gatePass, refreshGatePass } = useTokenGate(contract_address, address);
   return (
     <section className="px-6 Collection-display">
       {collection ? (
@@ -23,9 +29,14 @@ function CollectionDisplay() {
           </AnimationOnScroll>
           <div className="Collection-list">
             {collection.group.map((group, index) => (
-              <CollectionGroupCard hasLoaded={hasLoaded} key={index} group={group} />
+              <CollectionGroupCard refreshGatePass={refreshGatePass}
+                hasLoaded={hasLoaded}
+                key={index}
+                group={group}
+              />
             ))}
-            {/*isLeriq && <TokenGatedMusicPlayer /> */}
+            {isLeriq && !gatePass && <MintToUnlock />}
+            {isLeriq && gatePass && <TokenGatedMusicPlayer />}
           </div>
           <div className="Collection-description">
             <h3 className="Collection-name">About Collection</h3>
