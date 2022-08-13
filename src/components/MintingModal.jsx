@@ -6,12 +6,15 @@ import { useState } from "react";
 import Rough_Diamond_ABI from "../data/contract-abis/roughDiamondSale.json";
 import { useSigner } from "wagmi";
 import { getTokensToMint } from "../util/get-available-NFTs";
+import WalletConnect from "./WalletConnect";
 
 export default function MintingModal({ open, setOpen }) {
   const [quantity, setQuantity] = useState("");
   const [minting, setMinting] = useState(false);
   const { data: signer, isError, isLoading: loadingSigner } = useSigner();
-  const mintingFee = ethers.utils.parseEther(import.meta.env.VITE_MINT_FEE || "1");
+  const mintingFee = ethers.utils.parseEther(
+    import.meta.env.VITE_MINT_FEE || "1"
+  );
   const maxPerWallet = import.meta.env.VITE_MAX_PER_WALLET || 3;
   const info = {
     maxPerWallet,
@@ -71,12 +74,17 @@ export default function MintingModal({ open, setOpen }) {
     <section
       style={{ backdropFilter: open ? "blur(5px)" : "none" }}
       className={`overflow-hidden ${
-        open ? "fixed inset-0 transition-all duration-300 flex justify-center items-center z-[9999]" : "h-0"
+        open
+          ? "fixed inset-0 transition-all duration-300 flex justify-center items-center z-[9999]"
+          : "h-0"
       }`}
     >
       <div className="Collection__mint-modal__content">
         <div className="text-right">
-          <button onClick={() => setOpen(false)} className="text-2xl md:text-4xl">
+          <button
+            onClick={() => setOpen(false)}
+            className="text-2xl md:text-4xl"
+          >
             <FontAwesomeIcon icon={faTimes} />
           </button>
         </div>
@@ -86,7 +94,10 @@ export default function MintingModal({ open, setOpen }) {
               Rough Diamonds Whitelist Mint
             </h3>
             <div>
-              <h3 className="mb-2">Minting Fee: {ethers.utils.formatEther(info.mintingFee.toString())} MATIC</h3>
+              <h3 className="mb-2">
+                Minting Fee:{" "}
+                {ethers.utils.formatEther(info.mintingFee.toString())} MATIC
+              </h3>
               <h3>Max NFTs Per Wallet: {info.maxPerWallet}</h3>
             </div>
             <div className="flex items-center">
@@ -97,13 +108,24 @@ export default function MintingModal({ open, setOpen }) {
                 className="mr-3 rounded-md px-3 text-base lg:text-lg h-[46px] md:h-[60px] w-full outline-none border-slate-300 bg-dark text-white"
                 placeholder="How Many NFTs?"
               />{" "}
-              <button
-                onClick={async () => await mintNFTs()}
-                type="button"
-                className="Collection-group__mint-btn mt-0 text-base lg:text-lg h-[46px] md:h-[60px]"
-              >
-                Mint {minting && <FontAwesomeIcon className="ml-2" icon={faSpinner} spin />}
-              </button>
+              {!signer && (
+                <span className="flex-shrink-0">
+                  <WalletConnect />
+                </span>
+              )}
+              {signer && (
+                <button
+                  disabled={minting}
+                  onClick={async () => await mintNFTs()}
+                  type="button"
+                  className="Collection-group__mint-btn mt-0 text-base lg:text-lg h-[46px] md:h-[60px]"
+                >
+                  Mint{" "}
+                  {minting && (
+                    <FontAwesomeIcon className="ml-2" icon={faSpinner} spin />
+                  )}
+                </button>
+              )}
             </div>
           </div>
         </div>
