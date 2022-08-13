@@ -6,6 +6,7 @@ const errorCheckpoints = {
     "insufficient funds": "You don't have enough MATIC to complete minting",
     "Invalid token encountered": "Invalid token encountered",
     "Failed to send Ether": "Couldn't send MATIC for NFT",
+    "UNPREDICTABLE_GAS_LIMIT": "Gas prediction failed"
 }
 
 export function formatError(err) {
@@ -15,7 +16,7 @@ export function formatError(err) {
             if (verbose.includes(x)) {
                 return errorCheckpoints[x];
             }
-            return verbose;
         }
+        return verbose;
     }
 }

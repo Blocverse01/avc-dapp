@@ -4,15 +4,18 @@ import Swal from "sweetalert2";
 import { ethers } from "ethers";
 import { useState } from "react";
 import Rough_Diamond_ABI from "../data/contract-abis/roughDiamondSale.json";
-import { useSigner } from "wagmi";
 import { getTokensToMint } from "../util/get-available-NFTs";
 import WalletConnect from "./WalletConnect";
 import { formatError } from "../util/format-errors";
+import { useAccount, useProvider, useSigner } from "wagmi";
+import ReactAnimatedEllipsis from 'react-animated-ellipsis';
 
-export default function MintingModal({ open, setOpen }) {
+export default function MintingModal({ open, setOpen, refreshGatePass }) {
   const [quantity, setQuantity] = useState("");
-  const [minting, setMinting] = useState(false);
+  const [mintState, setMintState] = useState("Mint");
+  const { address } = useAccount();
   const { data: signer, isError, isLoading: loadingSigner } = useSigner();
+  const provider = useProvider();
   const mintingFee = ethers.utils.parseEther(
     import.meta.env.VITE_MINT_FEE || "1"
   );
@@ -23,6 +26,12 @@ export default function MintingModal({ open, setOpen }) {
     maxPerWallet,
     mintingFee,
   };
+  const buttonColors = {
+    Mint: "",
+    Ready: "bg-purple-500 ring-purple-900 ring-4",
+    Approve: "bg-purple-700 ring-purple-600 ring-4",
+    Minting: "bg-purple-900 ring-purple-300 ring-4",
+  }
   const handleChange = ({ target: { value: amount } }) => {
     setQuantity(amount);
   };
@@ -43,12 +52,10 @@ export default function MintingModal({ open, setOpen }) {
       }
       const platformOperator = new ethers.Contract(
         import.meta.env.VITE_SALE_OPERATOR_ADDRESS,
-        Rough_Diamond_ABI,
-        signer
-      );
+        Rough_Diamond_ABI);
       try {
-        const isWhitelisted = await platformOperator.whitelistedAddresses(
-          await signer.getAddress()
+        const isWhitelisted = await platformOperator.connect(provider).whitelistedAddresses(
+          address
         );
         if (!isWhitelisted) {
           throw Error("Your address is not whitelisted for this sale");
@@ -56,11 +63,13 @@ export default function MintingModal({ open, setOpen }) {
       } catch (err) {
         throw Error("You are not whitelisted to mint");
       }
-      setMinting(true);
+      setMintState("Ready");
       const nfts = await getTokensToMint(numberishQuantity);
-      const tx = await platformOperator.buyNFTs(nfts, {
+      setMintState("Approve");
+      const tx = await platformOperator.connect(signer).buyNFTs(nfts, {
         value: mintingFee.mul(numberishQuantity),
       });
+      setMintState("Minting");
       const receipt = await tx.wait();
       if (receipt.status && receipt.blockNumber) {
         Swal.fire({
@@ -69,7 +78,8 @@ export default function MintingModal({ open, setOpen }) {
           icon: "success",
           confirmButtonText: "Yayy 🎉",
         });
-        setMinting(false);
+        refreshGatePass();
+        setMintState("Mint");
         return;
       }
       throw Error("Couldn't mint NFTs");
@@ -81,17 +91,16 @@ export default function MintingModal({ open, setOpen }) {
         text: message,
         icon: "error",
       });
-      setMinting(false);
+      setMintState("Mint");
     }
   };
   return (
     <section
       style={{ backdropFilter: open ? "blur(5px)" : "none" }}
-      className={`overflow-hidden ${
-        open
-          ? "fixed inset-0 transition-all duration-300 flex justify-center items-center z-[9999]"
-          : "h-0"
-      }`}
+      className={`overflow-hidden ${open
+        ? "fixed inset-0 transition-all duration-300 flex justify-center items-center z-[9999]"
+        : "h-0"
+        }`}
     >
       <div className="Collection__mint-modal__content relative z-[9999]">
         <div className="text-right">
@@ -103,7 +112,7 @@ export default function MintingModal({ open, setOpen }) {
           </button>
         </div>
         <div className="min-h-[20vh] lg:min-h-[160px] h-fit flex max-w-xl mx-auto justify-center items-center py-5">
-          <div className="grid grid-cols-1 gap-6 lg:gap-8 flex-1 text-slate-200">
+          <div className="grid flex-1 grid-cols-1 gap-6 lg:gap-8 text-slate-200">
             <h3 className="text-center font-semibold text-xl font-hero lg:text-[38px] md:text-center border-b border-slate-300">
               Rough Diamonds Whitelist Mint
             </h3>
@@ -124,10 +133,10 @@ export default function MintingModal({ open, setOpen }) {
                   {import.meta.env.VITE_NFT_SUPPLY}
                 </span>
               </h3>
-              <h3>
+              <h3 className="break-words truncate overflow-ellipsis">
                 Contract Address:{" "}
                 <a
-                  className="truncate underline text-blue-300"
+                  className="text-blue-300 underline"
                   href={`${explorerURL}/token/${platformContractAddress}`}
                 >
                   {platformContractAddress}
@@ -149,15 +158,12 @@ export default function MintingModal({ open, setOpen }) {
               )}
               {signer && (
                 <button
-                  disabled={minting}
+                  disabled={mintState !== "Mint"}
                   onClick={async () => await mintNFTs()}
                   type="button"
-                  className="Collection-group__mint-btn mt-0 text-base lg:text-lg h-[46px] md:h-[60px]"
+                  className={`Collection-group__mint-btn mt-0 text-base lg:text-lg h-[46px] md:h-[60px] ${buttonColors[mintState]} transition duration-500 ease-in-out`}
                 >
-                  Mint{" "}
-                  {minting && (
-                    <FontAwesomeIcon className="ml-2" icon={faSpinner} spin />
-                  )}
+                  {mintState} {mintState !== "Mint" && <ReactAnimatedEllipsis />}
                 </button>
               )}
             </div>

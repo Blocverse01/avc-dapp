@@ -3,11 +3,11 @@ import MintingModal from "./MintingModal";
 import { useState } from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
-function CollectionGroupCard({ group, hasLoaded }) {
+function CollectionGroupCard({ group, hasLoaded, refreshGatePass }) {
   const [open, setOpen] = useState(false);
   return (
     <div>
-      <MintingModal open={open} setOpen={setOpen} />
+      <MintingModal refreshGatePass={refreshGatePass} open={open} setOpen={setOpen} />
       <AnimationOnScroll animateIn="animate__fadeInLeft">
         <section className="Collection-group">
           <h2 className="Collection-group-name">{group.name}</h2>
