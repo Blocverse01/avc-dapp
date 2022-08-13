@@ -163,7 +163,7 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
                   type="button"
                   className={`Collection-group__mint-btn mt-0 text-base lg:text-lg h-[46px] md:h-[60px] ${buttonColors[mintState]} transition duration-500 ease-in-out`}
                 >
-                  {mintState} {mintState !== "Mint" && <ReactAnimatedEllipsis />}
+                  {mintState} {mintState === "Minting" && <ReactAnimatedEllipsis />}
                 </button>
               )}
             </div>
