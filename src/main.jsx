@@ -21,7 +21,7 @@ console.log(import.meta.env.VITE_ALCHEMY_ID);
 
 gsap.registerPlugin(ScrollTrigger);
 const { chains, provider } = configureChains(
-  [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
+  [chain.polygonMumbai, chain.polygon],
   [
     alchemyProvider({ alchemyId: import.meta.env.VITE_ALCHEMY_ID }),
     publicProvider(),
