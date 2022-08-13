@@ -7,6 +7,7 @@ import Rough_Diamond_ABI from "../data/contract-abis/roughDiamondSale.json";
 import { useSigner } from "wagmi";
 import { getTokensToMint } from "../util/get-available-NFTs";
 import WalletConnect from "./WalletConnect";
+import { formatError } from "../util/format-errors";
 
 export default function MintingModal({ open, setOpen }) {
   const [quantity, setQuantity] = useState("");
@@ -16,6 +17,8 @@ export default function MintingModal({ open, setOpen }) {
     import.meta.env.VITE_MINT_FEE || "1"
   );
   const maxPerWallet = import.meta.env.VITE_MAX_PER_WALLET || 3;
+  const platformContractAddress = import.meta.env.VITE_SALE_OPERATOR_ADDRESS;
+  const explorerURL = import.meta.env.VITE_EXPLORER_URL;
   const info = {
     maxPerWallet,
     mintingFee,
@@ -43,6 +46,16 @@ export default function MintingModal({ open, setOpen }) {
         Rough_Diamond_ABI,
         signer
       );
+      try {
+        const isWhitelisted = await platformOperator.whitelistedAddresses(
+          await signer.getAddress()
+        );
+        if (!isWhitelisted) {
+          throw Error("Your address is not whitelisted for this sale");
+        }
+      } catch (err) {
+        throw Error("You are not whitelisted to mint");
+      }
       setMinting(true);
       const nfts = await getTokensToMint(numberishQuantity);
       const tx = await platformOperator.buyNFTs(nfts, {
@@ -62,9 +75,10 @@ export default function MintingModal({ open, setOpen }) {
       throw Error("Couldn't mint NFTs");
     } catch (err) {
       console.log(err);
+      const message = formatError(err);
       Swal.fire({
-        title: "Error, Something went wrong!",
-        text: "Minting failed, be sure you have enough MATIC for minting",
+        title: "Something went wrong!",
+        text: message,
         icon: "error",
       });
       setMinting(false);
@@ -79,7 +93,7 @@ export default function MintingModal({ open, setOpen }) {
           : "h-0"
       }`}
     >
-      <div className="Collection__mint-modal__content">
+      <div className="Collection__mint-modal__content relative z-[9999]">
         <div className="text-right">
           <button
             onClick={() => setOpen(false)}
@@ -93,12 +107,32 @@ export default function MintingModal({ open, setOpen }) {
             <h3 className="text-center font-semibold text-xl font-hero lg:text-[38px] md:text-center border-b border-slate-300">
               Rough Diamonds Whitelist Mint
             </h3>
-            <div>
-              <h3 className="mb-2">
+            <div className="grid grid-cols-1 gap-2">
+              <h3>
                 Minting Fee:{" "}
-                {ethers.utils.formatEther(info.mintingFee.toString())} MATIC
+                <span className="font-semibold">
+                  {ethers.utils.formatEther(info.mintingFee.toString())} MATIC
+                </span>
               </h3>
-              <h3>Max NFTs Per Wallet: {info.maxPerWallet}</h3>
+              <h3>
+                Max NFTs Per Wallet:{" "}
+                <span className="font-semibold">{info.maxPerWallet}</span>
+              </h3>
+              <h3>
+                NFTs Available for Mint:{" "}
+                <span className="font-semibold">
+                  {import.meta.env.VITE_NFT_SUPPLY}
+                </span>
+              </h3>
+              <h3>
+                Contract Address:{" "}
+                <a
+                  className="truncate underline text-blue-300"
+                  href={`${explorerURL}/token/${platformContractAddress}`}
+                >
+                  {platformContractAddress}
+                </a>
+              </h3>
             </div>
             <div className="flex items-center">
               <input
