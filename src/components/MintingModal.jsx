@@ -1,13 +1,71 @@
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import useRoughDiamondMinter from "../hooks/useRoughDiamondMinter";
 import Swal from "sweetalert2";
 import { ethers } from "ethers";
+import { useState } from "react";
+import Rough_Diamond_ABI from "../data/contract-abis/roughDiamondSale.json";
+import { useSigner } from "wagmi";
+import { getTokensToMint } from "../util/get-available-NFTs";
 
 export default function MintingModal({ open, setOpen }) {
-  const { isLoading, isSuccess, mint, setQuantity, quantity, info } = useRoughDiamondMinter();
+  const [quantity, setQuantity] = useState("");
+  const [minting, setMinting] = useState(false);
+  const { data: signer, isError, isLoading: loadingSigner } = useSigner();
+  const mintingFee = ethers.utils.parseEther(import.meta.env.VITE_MINT_FEE || "1");
+  const maxPerWallet = import.meta.env.VITE_MAX_PER_WALLET || 3;
+  const info = {
+    maxPerWallet,
+    mintingFee,
+  };
   const handleChange = ({ target: { value: amount } }) => {
     setQuantity(amount);
+  };
+  const mintNFTs = async () => {
+    try {
+      const numberishQuantity = parseInt(quantity, 10);
+      if (isNaN(numberishQuantity)) {
+        throw Error("Enter a valid amount");
+      }
+      if (numberishQuantity < 1) {
+        throw Error("Enter an amount greater than zero");
+      }
+      if (numberishQuantity > maxPerWallet) {
+        throw Error("Max Mint of 3 NFTs");
+      }
+      if (!signer && !loadingSigner) {
+        throw Error("Connect your wallet to mint");
+      }
+      const platformOperator = new ethers.Contract(
+        import.meta.env.VITE_SALE_OPERATOR_ADDRESS,
+        Rough_Diamond_ABI,
+        signer
+      );
+      setMinting(true);
+      const nfts = await getTokensToMint(numberishQuantity);
+      const tx = await platformOperator.buyNFTs(nfts, {
+        value: mintingFee.mul(numberishQuantity),
+      });
+      const receipt = await tx.wait();
+      if (receipt.status && receipt.blockNumber) {
+        Swal.fire({
+          title: "Success!",
+          text: `You have successfully minted ${quantity} Rough Diamonds!`,
+          icon: "success",
+          confirmButtonText: "Yayy 🎉",
+        });
+        setMinting(false);
+        return;
+      }
+      throw Error("Couldn't mint NFTs");
+    } catch (err) {
+      console.log(err);
+      Swal.fire({
+        title: "Error, Something went wrong!",
+        text: "Minting failed, be sure you have enough MATIC for minting",
+        icon: "error",
+      });
+      setMinting(false);
+    }
   };
   return (
     <section
@@ -40,10 +98,11 @@ export default function MintingModal({ open, setOpen }) {
                 placeholder="How Many NFTs?"
               />{" "}
               <button
+                onClick={async () => await mintNFTs()}
                 type="button"
                 className="Collection-group__mint-btn mt-0 text-base lg:text-lg h-[46px] md:h-[60px]"
               >
-                Mint {quantity}
+                Mint {minting && <FontAwesomeIcon className="ml-2" icon={faSpinner} spin />}
               </button>
             </div>
           </div>

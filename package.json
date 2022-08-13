@@ -17,6 +17,7 @@
     "@rollup/plugin-inject": "^4.0.4",
     "@splidejs/react-splide": "^0.7.7",
     "@tailwindcss/line-clamp": "^0.4.0",
+    "alchemy-sdk": "^2.0.2",
     "animate.css": "^4.1.1",
     "babel-plugin-macros": "^3.1.0",
     "cryptify": "^4.1.2",

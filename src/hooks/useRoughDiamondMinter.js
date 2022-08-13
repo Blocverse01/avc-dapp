@@ -5,13 +5,14 @@ import { ethers } from "ethers";
 
 export default function useRoughDiamondMinter() {
   const [quantity, setQuantity] = useState("");
+  const [tokenIds, setTokenIds] = useState([]);
   const mintingFee = ethers.utils.parseEther(import.meta.env.VITE_MINT_FEE || "1");
   const maxPerWallet = import.meta.env.VITE_MAX_PER_WALLET || 3;
   const { config } = usePrepareContractWrite({
     addressOrName: import.meta.env.VITE_SALE_OPERATOR_ADDRESS,
     contractInterface: Rough_Diamond_ABI,
     functionName: "buyNFTs",
-    args: [quantity],
+    args: [tokenIds],
     overrides: {
       value: !isNaN(parseInt(quantity, 10)) ? mintingFee.mul(parseInt(quantity, 10)) : mintingFee,
     },
@@ -34,11 +35,11 @@ export default function useRoughDiamondMinter() {
     if (numberishQuantity < 1) {
       throw Error("Enter an amount greater than zero");
     }
-    write();
+    write?.();
   };
   const info = {
     maxPerWallet,
-    mintingFee
-  }
-  return { isLoading, mint, isSuccess, setQuantity, quantity, info };
+    mintingFee,
+  };
+  return { isLoading, mint, isSuccess, setQuantity, quantity, info, write };
 }
