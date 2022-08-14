@@ -134,7 +134,6 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
                   {import.meta.env.VITE_NFT_SUPPLY}
                 </span>
               </h3>
-              <div><ReactAnimatedEllipsis /></div>
               <h3 className="break-words truncate overflow-ellipsis">
                 Contract Address:{" "}
                 <a
