@@ -1,4 +1,4 @@
-import { faTimes, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Swal from "sweetalert2";
 import { ethers } from "ethers";
@@ -8,7 +8,7 @@ import { getTokensToMint } from "../util/get-available-NFTs";
 import WalletConnect from "./WalletConnect";
 import { formatError } from "../util/format-errors";
 import { useAccount, useProvider, useSigner } from "wagmi";
-import { ReactAnimatedEllipsis } from 'react-animated-ellipsis'
+import BouncingDotsLoader from "./BouncingDotsLoader";
 
 export default function MintingModal({ open, setOpen, refreshGatePass }) {
   const [quantity, setQuantity] = useState("");
@@ -164,7 +164,7 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
                   type="button"
                   className={`Collection-group__mint-btn mt-0 text-base lg:text-lg h-[46px] md:h-[60px] ${buttonColors[mintState]} transition duration-500 ease-in-out`}
                 >
-                  {mintState}
+                  {mintState} {mintState !== "Mint" && <BouncingDotsLoader />}
                 </button>
               )}
             </div>
