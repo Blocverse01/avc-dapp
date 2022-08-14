@@ -136,7 +136,7 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
               </h3>
               <h3 className="break-words truncate overflow-ellipsis">
                 Contract Address:{" "}
-                <a
+                <a target="_blank" rel="noreferrer"
                   className="text-blue-300 underline"
                   href={`${explorerURL}/token/${nftContract}`}
                 >
