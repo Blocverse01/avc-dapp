@@ -21,6 +21,7 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
   );
   const maxPerWallet = import.meta.env.VITE_MAX_PER_WALLET || 3;
   const platformContractAddress = import.meta.env.VITE_SALE_OPERATOR_ADDRESS;
+  const nftContract = import.meta.env.VITE_NFT_ADDRESS;
   const explorerURL = import.meta.env.VITE_EXPLORER_URL;
   const info = {
     maxPerWallet,
@@ -133,13 +134,14 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
                   {import.meta.env.VITE_NFT_SUPPLY}
                 </span>
               </h3>
+              <div><ReactAnimatedEllipsis /></div>
               <h3 className="break-words truncate overflow-ellipsis">
                 Contract Address:{" "}
                 <a
                   className="text-blue-300 underline"
-                  href={`${explorerURL}/token/${platformContractAddress}`}
+                  href={`${explorerURL}/token/${nftContract}`}
                 >
-                  {platformContractAddress}
+                  {nftContract}
                 </a>
               </h3>
             </div>
@@ -163,7 +165,7 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
                   type="button"
                   className={`Collection-group__mint-btn mt-0 text-base lg:text-lg h-[46px] md:h-[60px] ${buttonColors[mintState]} transition duration-500 ease-in-out`}
                 >
-                  {mintState} {mintState !== "Mint" && <div><ReactAnimatedEllipsis /></div>}
+                  {mintState}
                 </button>
               )}
             </div>
