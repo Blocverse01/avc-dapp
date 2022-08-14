@@ -9,7 +9,7 @@ import Cassava from "../assets/cassava_logo.png";
 export default function Partners() {
   return (
     <section className="Partners">
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-3 gap-5 md:gap-8">
         <a href="https://blocverse.com">
           <img
             className="Partners-logo Partner"

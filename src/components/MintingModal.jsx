@@ -8,7 +8,7 @@ import { getTokensToMint } from "../util/get-available-NFTs";
 import WalletConnect from "./WalletConnect";
 import { formatError } from "../util/format-errors";
 import { useAccount, useProvider, useSigner } from "wagmi";
-import ReactAnimatedEllipsis from 'react-animated-ellipsis';
+import { ReactAnimatedEllipsis } from 'react-animated-ellipsis'
 
 export default function MintingModal({ open, setOpen, refreshGatePass }) {
   const [quantity, setQuantity] = useState("");
@@ -158,11 +158,12 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
               )}
               {signer && (
                 <button
+                  disabled={mintState !== "Mint"}
                   onClick={async () => await mintNFTs()}
                   type="button"
                   className={`Collection-group__mint-btn mt-0 text-base lg:text-lg h-[46px] md:h-[60px] ${buttonColors[mintState]} transition duration-500 ease-in-out`}
                 >
-                  {mintState} {mintState !== "Mint" && <span><ReactAnimatedEllipsis /></span>}
+                  {mintState} {mintState !== "Mint" && <div><ReactAnimatedEllipsis /></div>}
                 </button>
               )}
             </div>

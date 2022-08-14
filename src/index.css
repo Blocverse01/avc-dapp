@@ -357,10 +357,10 @@ progress::-moz-progress-bar {
     @apply mb-2 font-semibold capitalize break-words line-clamp-2;
   }
   .Partners {
-    @apply md:max-w-[1058px] mx-auto py-5 px-5 md:py-8 md:px-8 lg:py-28 text-white rounded-[3.9px] lg:rounded-[13px];
+    @apply md:max-w-[1058px] mx-auto py-5 px-5 md:py-8 md:px-8 text-white rounded-[3.9px] lg:rounded-[13px];
   }
   .Partner {
-    @apply lg:duration-200 lg:hover:-translate-y-5 mx-auto p-5 lg:p-8;
+    @apply p-5 mx-auto lg:duration-200 lg:hover:-translate-y-5 lg:p-8;
     background: linear-gradient(
       122.93deg,
       rgba(255, 255, 255, 0.28) 0.11%,
