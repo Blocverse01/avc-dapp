@@ -49,6 +49,12 @@ function Home() {
             </div>
           </AnimationOnScroll>
         </div>
+        <div className="absolute; h-[57px] ">
+          <a href="/" className="Collection-group__mint-btn font-medium text-base mt-3 lg:mt-3 top-[988px]">
+            Become a Creator
+          </a>
+        </div>
+       
         <div className="Home-hero-text-container skewElem">
           <article className="Home-hero-text">
             Empowering creatives across industries of art, music, film, sports, real estate and beyond
