@@ -1,11 +1,12 @@
-import { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Faq() {
-  const [active, setActive] = useState(false);
+export default function Faq(props) {
+  const [open, setOpen] = useState(props.open || false);
 
-  const contentRef = useRef(null);
+  /* const contentRef = useRef(null);
 
   useEffect(() => {
     contentRef.current.style.maxHeight = active
@@ -15,40 +16,32 @@ export default function Faq() {
 
   const toggleAccordion = () => {
     setActive(!active);
-  };
+  }; */
   return (
-    <section>
-      <div className="p-6 glass-bg">
-        <div className="question ">
-          <h2 className="text-[25px] font-[400] text-white">Question</h2>
-          <button onClick={toggleAccordion} className={`${active}`}>
-            <FontAwesomeIcon
-              icon={faChevronDown}
-              className={
-                active ? `text-white text-2xl rotate ` : "text-white text-2xl"
-              }
-            />
-          </button>
-        </div>
-        <div
-          ref={contentRef}
-          className={active ? `answer answer-divider` : `answer`}
-        >
-          <p className="mt-4 text-white text-[18px] font-[400]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa in id
-            porttitor gravida pellentesque vitae netus. At natoque mi lacus, ac
-            viverra sed blandit. Tempus neque quisque arcu eget scelerisque
-            euismod mi. Curabitur praesent pellentesque a vel bibendum eget
-            porttitor. Semper ultrices sed in in et ut tellus eleifend
-            pellentesque. Tempus eu dapibus ac vitae etiam velit. Fames mi et ac
-            fermentum. Netus in rutrum consectetur neque ut. Duis consectetur
-            donec pellentesque sed consectetur. Lectus tincidunt duis etiam
-            tempus, nullam. Consectetur curabitur pretium congue pretium justo,
-            at sit sit eu. Nec et eros, nam morbi sagittis non sem. Cras nunc
-            fermentum vitae nunc.
-          </p>
-        </div>
+    <div
+      onClick={() => {
+        setOpen(!open);
+      }}
+      className="faq py-[25px] rounded-[8px] cursor-pointer text-white px-[25px]"
+    >
+      <div
+        className={`${
+          open ? "pb-[25px] faq-border" : ""
+        } text-[14px] flex justify-between leading-[17.3px] lg:text-[25px] lg:leading-[33.07px]`}
+      >
+        {props.question}{" "}
+        <FontAwesomeIcon
+          className="text-[14px] md:text-[25px] ml-[13px]"
+          icon={open ? faChevronUp : faChevronDown}
+        />
       </div>
-    </section>
+      <div 
+        className={`${
+          open ? "h-full py-[25px]" : "h-0"
+        } transition-all text-[11px] overflow-y-hidden lg:text-[18px] lg:leading-[27px] duration-300`}
+      >
+        {props.answer}
+      </div>
+    </div>
   );
 }
