@@ -152,7 +152,7 @@ progress::-moz-progress-bar {
     transform: rotate(9.66deg);
   }
   .Home-hero-text-container {
-    @apply md:border-t md:absolute md:bottom-4 md:w-[17rem] lg:w-[20rem] xl:w-[24.0625rem] md:right-0 md:border-white pt-[1.7237rem] md:pt-[1rem];
+    @apply md:border-t md:absolute md:bottom-[125px] md:w-[17rem] lg:w-[20rem] xl:w-[24.0625rem] md:right-0 md:border-white pt-[1.7237rem] md:pt-[1rem];
   }
   .Home-hero-text {
     @apply text-[.75rem] leading-[.9762rem] lg:text-[1.25rem] lg:leading-[1.6275rem] text-white text-center mx-auto max-w-[160px] md:mx-0 md:text-left lg:max-w-[15.3125rem];
@@ -369,11 +369,22 @@ progress::-moz-progress-bar {
     border: 1px solid #ffffff80;
   }
   .Partners-logo {
-    @apply h-[80px] md:h-[120px] lg:h-[150px] w-full object-scale-down;
+    @apply h-[80px] md:h-[120px] lg:h-[150px] w-full object-scale-down;   
   }
 
   .Mint_To_Unlock {
     @apply py-5 lg:py-8;
     backdrop-filter: blur(10px);
+  }
+
+  .join-the-team-btn-bg{
+  background: linear-gradient(122.93deg,
+        rgba(255, 255, 255, 0.28) 0.11%,
+        rgba(255, 255, 255, 0.08) 101.26%);
+    border: 1px solid #ffffff80;
+  }
+
+  .hero-btns{
+    @apply text-base mx-auto block text-white duration-200 lg:hover:scale-105 font-[700] py-2 px-6 rounded-[45px] md:text-[16px] lg:text-[20px]
   }
 }
