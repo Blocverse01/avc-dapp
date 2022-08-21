@@ -10,7 +10,7 @@ export default function Team() {
           key={index}
           className="cursor-pointer"
         >
-          <div className="w-fit duration-200 lg:hover:scale-105 p-6 join-the-team-btn-bg rounded-[14px] mx-auto">
+          <div className="w-fit duration-200 lg:hover:scale-105 p-6 glass-bg rounded-[14px] mx-auto">
             <img
               src={member.picture}
               className="w-[240.22px] h-[230px] md:h-[240.22px] object-cover"

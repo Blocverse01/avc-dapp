@@ -18,6 +18,7 @@ import twitter from "./assets/twitter.png";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Element } from "react-scroll";
+import Faq from "./components/Faq";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
 const steps = [
@@ -62,10 +63,7 @@ function Home() {
           <a href="/" className="text-white  bg-[#7F1C97] hero-btns ">
             Become a Creator
           </a>
-          <a
-            href="/"
-            className=" md:mt-0 mt-2 w-fit  join-the-team-btn-bg hero-btns"
-          >
+          <a href="/" className=" md:mt-0 mt-2 w-fit  glass-bg hero-btns">
             Join the Team
           </a>
         </div>
@@ -196,56 +194,15 @@ function Home() {
         </section>
       </Element>
 
-      <Element name="contactUs">
-        <section id="contactUs" className="page-section-padding">
-          <h2 className="page-section-header">Get in touch</h2>
-          <form className="Home-contact-form">
-            <div>
-              <label htmlFor="first-name" className="Home-contact-form-label">
-                First Name
-              </label>
-              <input
-                id="first-name"
-                className="Home-contact-form-input"
-                type="text"
-              />
-            </div>
-            <div>
-              <label htmlFor="last-name" className="Home-contact-form-label">
-                Last Name
-              </label>
-              <input
-                id="last-name"
-                className="Home-contact-form-input"
-                type="text"
-              />
-            </div>
-            <div className="md:col-span-2">
-              <label htmlFor="email" className="Home-contact-form-label">
-                Your E-mail
-              </label>
-              <input
-                id="email"
-                className="Home-contact-form-input"
-                type="email"
-              />
-            </div>
-            <div className="md:col-span-2">
-              <label htmlFor="message" className="Home-contact-form-label">
-                Your Message
-              </label>
-              <textarea
-                rows={6}
-                id="message"
-                className="Home-contact-form-textarea"
-              ></textarea>
-            </div>
-            <div className="md:col-span-2">
-              <button className="Home-contact-form-button">Send Message</button>
-            </div>
-          </form>
+      <Element name="faq">
+        <section class="page-section-padding px-20" id="Faq">
+          <h2 className="page-section-header  mb-[33.46px] lg:mb-[3.1169rem]">
+            Frequently asked questions
+          </h2>
+          <Faq />
         </section>
       </Element>
+
       <footer className="App-footer">
         <section className="App-footer-socials">
           <div className="App-footer-socials-item">

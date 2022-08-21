@@ -14,7 +14,7 @@ export default function TeamMember() {
       </h2>
       <h2 className=" text-[24px] text-white ">{validMember.role}</h2>
       <div className="xl:flex items-center mt-10 justify-between">
-        <div className="p-8 w-fit mx-auto rounded-[14px] join-the-team-btn-bg">
+        <div className="p-8 w-fit mx-auto rounded-[14px] glass-bg">
           <img
             src={validMember.picture}
             className="w-full h-auto md:w-[434px] md:h-[591px] object-cover"

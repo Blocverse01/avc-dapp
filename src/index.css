@@ -377,12 +377,27 @@ progress::-moz-progress-bar {
     backdrop-filter: blur(10px);
   }
 
-  .join-the-team-btn-bg{
+  .glass-bg{
   background: linear-gradient(122.93deg,
         rgba(255, 255, 255, 0.28) 0.11%,
         rgba(255, 255, 255, 0.08) 101.26%);
     border: 1px solid #ffffff80;
   }
+
+.question{
+  @apply flex justify-between items-center;
+}
+
+.answer{
+  @apply max-h-0 overflow-hidden transition-all duration-500 ease-in-out text-left
+}
+.answer-divider{
+  @apply border-t border-t-[#545454]
+}
+
+.rotate{
+  @apply rotate-180 transition-all duration-500 ease-in-out 
+}
 
   .hero-btns{
     @apply text-base mx-auto block text-white duration-200 lg:hover:scale-105 font-[700] py-2 px-6 rounded-[45px] md:text-[16px] lg:text-[20px]
