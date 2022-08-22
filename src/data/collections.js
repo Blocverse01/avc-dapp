@@ -2,7 +2,7 @@
 // import diamondHead2 from "./collectionImages/diamond-head2.png";
 // import diamondHead3 from "./collectionImages/diamond-head3.png";
 import diamondGhost from "./collectionImages/Diamond-Ghost-NFT.jpg";
-import diamondGif from "./collectionImages/Rough-Diamond.gif";
+import diamondGif from "./collectionImages/Rough-Diamond.gif"; 
 
 
 export const collections = [{ 

@@ -1,8 +1,9 @@
 import Leriq from "./teamImages/LeriQ.png";
-import Cairon from "./teamImages/Cairon.webp";
-import Lehle from "./teamImages/Lehle.jpeg";
+import Cairon from "./teamImages/Cairon1.jpeg";
+import Lehle from "./teamImages/Lehle1.jpg";
 import Daniel from "./teamImages/Daniel.jpeg";
-import Kweku from "./teamImages/Kweku.jpeg";
+import Kweku from "./teamImages/Kweku1.jpg";
+import Folusho from "./teamImages/Folusho.jpeg";
 
 const teamMembers = [
 {
@@ -61,6 +62,18 @@ const teamMembers = [
     "Kweku Essien serves as the as the Chief Commercial Officer for Seso Global, a blockchain-based PropTech platform. He served as a business analyst for Conros Corporation for 5 years to aid in the development and facilitation of the company's interests and projects in sub-Saharan Africa including countries such as Rwanda, Uganda, Kenya, Ghana, Swaziland and South Africa. Mr. Essien also serves as the lead coordinator for Giants of Africa in Ghana. Giants of Africa is an organization founded by Toronto Raptors GM, Masai Ujiri with a mission to use basketball as a means to educate and enrich the lives of the youth of Africa. Basketball as a tool. Mr. Essien graduated from the University of Toronto with an Honours Bachelor's Degree, specializing in Political Science and Economics"
    ,
   headline: "Executive Advisor",
+
+
+},
+
+{
+  name: "Folusho Ogunde",
+  role: "Talent Manager",
+  picture: Folusho,
+  description:
+    "Folusho Ogunde is a Talent manager, talent miner and A&R, and brand developer, he has been working in the music and entertainment industry for 4 years, and has worked with artists on a developmental level , in the year 2019, he worked with and artist called mojo, who after a year was listed on the next to blow on 3 charts, and his song was dubbed the song of the summer ‘chop life crew’ , which brought international recognition from companies such as such Sony Music RCA. Mr Folusho also would has worked with international brands and persons such as , Jameson (influencer/model) , homecoming 2018 (promotion) , Wale (promotion and A&R, and also facilitated international collaborations, with various artists. Mr Folusho graduated from the university of middlesex Dubai with a bachelor’s degree in business and marketing."
+   ,
+  headline: "Talent Manager",
 
 
 },
