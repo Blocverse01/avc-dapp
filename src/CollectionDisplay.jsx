@@ -17,7 +17,7 @@ function CollectionDisplay() {
     setHasLoaded(true);
     setCollection(collections.find((item) => item.id === id));
   }, []);
-  const isLeriq = collection?.id === "leriq";
+  const isLeriq = collection?.id === "ghost-diamond";
   const contract_address = import.meta.env.VITE_NFT_ADDRESS;
   const { gatePass, refreshGatePass } = useTokenGate(contract_address, address);
   return (
@@ -27,13 +27,11 @@ function CollectionDisplay() {
           <AnimationOnScroll animateIn="animate__fadeInUp">
             <h3 className="Collection-name">{collection.title}</h3>
           </AnimationOnScroll>
-          <div className="Collection-description">
-            <h3 className="Collection-name">The Ghost Diamond NFT</h3>
-            <p>{collection.description7}</p>
-          </div>
           <div className="Collection-list">
             {collection.group.map((group, index) => (
-              <CollectionGroupCard refreshGatePass={refreshGatePass}
+              <CollectionGroupCard
+                groupDescription={collection.description7}
+                refreshGatePass={refreshGatePass}
                 hasLoaded={hasLoaded}
                 key={index}
                 group={group}

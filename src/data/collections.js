@@ -6,7 +6,7 @@ import diamondGif from "./collectionImages/Rough-Diamond.gif";
 
 
 export const collections = [{ 
-    id: "leriq", title: "LeriQ", group: [{
+    id: "ghost-diamond", title: "The Ghost Diamond NFT", group: [{
         name: "", items: [
             { image: diamondGhost, title: "" }, { image: diamondGif, title: "" },
             { image: diamondGhost, title: "" }],
