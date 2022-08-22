@@ -27,6 +27,10 @@ function CollectionDisplay() {
           <AnimationOnScroll animateIn="animate__fadeInUp">
             <h3 className="Collection-name">{collection.title}</h3>
           </AnimationOnScroll>
+          <div className="Collection-description">
+            <h3 className="Collection-name">The Ghost Diamond NFT</h3>
+            <p>{collection.description7}</p>
+          </div>
           <div className="Collection-list">
             {collection.group.map((group, index) => (
               <CollectionGroupCard refreshGatePass={refreshGatePass}

@@ -22,6 +22,9 @@ function CollectionGroupCard({ group, hasLoaded, refreshGatePass }) {
             <button onClick={() => setOpen(true)} className="Collection-group__mint-btn">
               Mint
             </button>
+            <a href="https://leriq.cent.co/" className="Collection-group__mint-btn font-small text-base mt-3 lg:mt-3">
+            Pay with debit/credit card
+            </a>
           </div>
         </section>
       </AnimationOnScroll>
