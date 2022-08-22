@@ -55,7 +55,7 @@ progress::-moz-progress-bar {
 
 @layer components {
   .App {
-    @apply bg-[rgba(4,5,25,1)] font-regular-text max-w-[94.5rem] mx-auto relative z-0 overflow-x-hidden min-h-screen scroll-smooth;
+    @apply bg-[rgba(4,5,25,1)] font-regular-text max-w-[94.5rem] mx-auto relative z-0 overflow-hidden min-h-screen scroll-smooth;
   }
   .App-scroll-to-top {
     @apply inline-block p-3 text-xs font-medium leading-tight text-white uppercase transition duration-150 ease-in-out bg-purple-600 rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg bottom-5 right-5 z-[9999];
@@ -124,6 +124,9 @@ progress::-moz-progress-bar {
   .collection-name {
     @apply text-white font-hero text-[1.875rem] leading-[2.0081rem] md:text-[2.5rem] md:leading-[3.2813rem] lg:text-[3.5rem] xl:text-[4rem] lg:leading-[4.2813rem] lg:max-w-[28.06rem] mb-3 mx-auto text-center;
   }
+  .team-member-name {
+    @apply text-left text-white font-hero text-[1.875rem] leading-[2.0081rem] md:text-[2.5rem] md:leading-[3.2813rem] lg:text-[3.5rem] xl:text-[4rem] lg:leading-[4.2813rem];
+  }
   .page-section-header {
     @apply uppercase max-w-[10.7rem] md:max-w-[16rem] lg:max-w-[29.06rem] tracking-wide;
   }
@@ -131,7 +134,7 @@ progress::-moz-progress-bar {
     @apply top-[145.06px] sm:top-[85px] lg:top-[4.7413rem] xl:top-[5.6413rem] absolute z-0;
   }
   .Home,
-  .Collection-display {
+  .Collection-display, .Team-member {
     @apply py-[3rem] lg:py-[2.8438rem] lg:mt-[.375rem] relative z-10;
   }
   .Home-hero-header {
@@ -401,5 +404,9 @@ progress::-moz-progress-bar {
 
   .hero-btns{
     @apply text-base mx-auto block text-white duration-200 lg:hover:scale-105 font-[700] py-2 px-6 rounded-[45px] md:text-[16px] lg:text-[20px]
+  }
+
+  .Team-member {
+    @apply lg:pt-24 px-6 lg:px-[10rem];
   }
 }
