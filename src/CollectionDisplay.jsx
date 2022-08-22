@@ -42,7 +42,7 @@ function CollectionDisplay() {
           </div>
           <AnimationOnScroll animateIn="animate__fadeInUp">
             <div className="Collection-description">
-              <h3 className="Collection-name">About Collection</h3>
+              <h3 className="Collection-name">About The Rough Diamond Collection</h3>
               <p>{collection.description1}</p>
               <p>{collection.description2}</p>
               <p>{collection.description3}</p>
