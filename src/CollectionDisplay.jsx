@@ -17,7 +17,7 @@ function CollectionDisplay() {
     setHasLoaded(true);
     setCollection(collections.find((item) => item.id === id));
   }, []);
-  const isLeriq = collection?.id === "leriq";
+  const isLeriq = collection?.id === "ghost-diamond";
   const contract_address = import.meta.env.VITE_NFT_ADDRESS;
   const { gatePass, refreshGatePass } = useTokenGate(contract_address, address);
   return (
@@ -29,7 +29,9 @@ function CollectionDisplay() {
           </AnimationOnScroll>
           <div className="Collection-list">
             {collection.group.map((group, index) => (
-              <CollectionGroupCard refreshGatePass={refreshGatePass}
+              <CollectionGroupCard
+                groupDescription={collection.description7}
+                refreshGatePass={refreshGatePass}
                 hasLoaded={hasLoaded}
                 key={index}
                 group={group}
@@ -38,14 +40,16 @@ function CollectionDisplay() {
             {isLeriq && !gatePass && <MintToUnlock />}
             {isLeriq && gatePass && <TokenGatedMusicPlayer />}
           </div>
-          <div className="Collection-description">
-            <h3 className="Collection-name">About Collection</h3>
-            <p>{collection.description1}</p>
-            <p>{collection.description2}</p>
-            <p>{collection.description3}</p>
-            <p>{collection.description4}</p>
-            <p>{collection.description5}</p>
-          </div>
+          <AnimationOnScroll animateIn="animate__fadeInUp">
+            <div className="Collection-description">
+              <h3 className="Collection-name">About Collection</h3>
+              <p>{collection.description1}</p>
+              <p>{collection.description2}</p>
+              <p>{collection.description3}</p>
+              <p>{collection.description4}</p>
+              <p>{collection.description5}</p>
+            </div>
+          </AnimationOnScroll>
         </div>
       ) : (
         <div>

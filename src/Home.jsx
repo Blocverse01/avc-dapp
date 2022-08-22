@@ -36,7 +36,7 @@ const steps = [
   { explainer: "Manage your profile and grow your portfolio.", image: four },
 ];
 const collections = [
-  { id: "leriq", image: leriq, title: "LeriQ" },
+  { id: "ghost-diamond", image: leriq, title: "LeriQ" },
   // { id: "avc-collection", image: avc2, title: "AVC Collection" },
 ];
 
@@ -161,7 +161,7 @@ function Home() {
             </Splide>
           </div>
           <Link
-            to={`/collections/leriq`}
+            to={`/collections/ghost-diamond`}
             className="Collection-group__mint-btn font-medium text-base mt-3 lg:mt-3"
           >
             More Info
