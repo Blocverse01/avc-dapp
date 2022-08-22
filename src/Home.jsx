@@ -162,7 +162,7 @@ function Home() {
           </div>
           <Link
             to={`/collections/ghost-diamond`}
-            className="Collection-group__mint-btn font-medium text-base mt-3 lg:mt-3"
+            className="Collection-group__buy-btn mx-auto font-medium text-base mt-3 lg:mt-3"
           >
             More Info
           </Link>
