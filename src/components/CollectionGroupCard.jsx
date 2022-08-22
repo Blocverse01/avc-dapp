@@ -18,7 +18,7 @@ function CollectionGroupCard({
         setOpen={setOpen}
       />
       <div className="backdrop-blur-sm w-fit mx-auto">
-        <AnimationOnScroll animateIn="animate__fadeInLeft">
+        <AnimationOnScroll animateIn="animate__fadeInUp">
           <section className="Collection-group">
             <p className="text-center py-5 max-w-3xl mx-auto">
               {groupDescription}
@@ -31,16 +31,16 @@ function CollectionGroupCard({
                 </AnimationOnScroll>
               ))}
             </div>
-            <div>
+            <div className="flex lg:mt-[39px] items-center justify-center mt-[12px]">
               <button
                 onClick={() => setOpen(true)}
-                className="Collection-group__mint-btn"
+                className="Collection-group__buy-btn mr-7"
               >
-                Mint
+                Mint with crypto
               </button>
               <a
                 href="https://leriq.cent.co/"
-                className=" font-small text-base mt-3 lg:mt-3"
+                className="Collection-group__buy-btn"
               >
                 Pay with debit/credit card
               </a>
