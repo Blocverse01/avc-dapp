@@ -4,6 +4,7 @@ import Lehle from "./teamImages/Lehle1.jpg";
 import Daniel from "./teamImages/Daniel.jpeg";
 import Kweku from "./teamImages/Kweku1.jpg";
 import Folusho from "./teamImages/Folusho.jpeg";
+import Kojo from "./teamImages/Kojo.jpeg";
 
 const teamMembers = [
 {
@@ -74,6 +75,18 @@ const teamMembers = [
     "Folusho Ogunde is a Talent manager, talent miner and A&R, and brand developer, he has been working in the music and entertainment industry for 4 years, and has worked with artists on a developmental level , in the year 2019, he worked with and artist called mojo, who after a year was listed on the next to blow on 3 charts, and his song was dubbed the song of the summer ‘chop life crew’ , which brought international recognition from companies such as such Sony Music RCA. Mr Folusho also would has worked with international brands and persons such as , Jameson (influencer/model) , homecoming 2018 (promotion) , Wale (promotion and A&R, and also facilitated international collaborations, with various artists. Mr Folusho graduated from the university of middlesex Dubai with a bachelor’s degree in business and marketing."
    ,
   headline: "Talent Manager",
+
+
+},
+
+{
+  name: "Kojo Owiredu",
+  role: "Community Manager",
+  picture: Kojo,
+  description:
+    "Certified Business Analysis professional with over five years experience in e-commerce, Finance and Robotic Process automation solutions. Content creator in music, arts and entertainment."
+   ,
+  headline: "CEO",
 
 
 },
