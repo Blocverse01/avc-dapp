@@ -61,7 +61,7 @@ function Home() {
           </article>
         </div>
         <div className="md:flex w-fit mt-10 md:w-[410px] lg:w-[466px] justify-between mx-auto ">
-          <a href="/" className="text-white  bg-[#7F1C97] hero-btns ">
+          <a href="https://fbgkk0t0oct.typeform.com/to/UlplMkQn" className="text-white  bg-[#7F1C97] hero-btns ">
             Become a Creator
           </a>
           <a href="/" className=" md:mt-0 mt-2 w-fit  glass-bg hero-btns">
