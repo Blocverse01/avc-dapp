@@ -232,11 +232,14 @@ function Home() {
                 <FontAwesomeIcon icon={faChevronDown} />
               </div>
             </div>
+            <a href="https://discord.com/invite/africanvaluables">
             <img
               src={discord}
               alt="join discord"
               className="App-footer-social-image w-[38.62px] h-[28.97px] lg:w-[137.56px] lg:h-[70.68px] xl:w-[167.56px] xl:h-[100.68px]"
             />
+            </a>
+            
           </div>
           <div className="App-footer-socials-item">
             <div>
