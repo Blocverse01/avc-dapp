@@ -9,7 +9,7 @@ function MintToUnlock() {
         <FontAwesomeIcon icon={faLock} className="text-5xl lg:text-[6rem]" />
       </div>
       <h3 className="text-center lg:text-lg font-semibold mt-3">
-        Mint a Ghost diamond NFT to exclusive music content and additional utilities.
+        Mint a Ghost diamond NFT to unlock exclusive music content and additional utilities.
       </h3>
     </div>
   );
