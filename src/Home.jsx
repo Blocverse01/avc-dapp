@@ -164,7 +164,7 @@ function Home() {
             to={`/collections/ghost-diamond`}
             className="Collection-group__buy-btn mx-auto font-medium text-base mt-3 lg:mt-3"
           >
-            More Info
+            Mint
           </Link>
         </section>
       </Element>
