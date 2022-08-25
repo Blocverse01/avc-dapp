@@ -115,7 +115,7 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
         <div className="min-h-[20vh] lg:min-h-[160px] h-fit flex max-w-xl mx-auto justify-center items-center py-5">
           <div className="grid flex-1 grid-cols-1 gap-6 lg:gap-8 text-slate-200">
             <h3 className="text-center font-semibold text-xl font-hero lg:text-[38px] md:text-center border-b border-slate-300">
-              Rough Diamonds Whitelist Mint
+              Rough Diamonds Public Mint
             </h3>
             <div className="grid grid-cols-1 gap-2">
               <h3>
