@@ -10,23 +10,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Home from "./Home";
 import CollectionDisplay from "./CollectionDisplay";
 import "@rainbow-me/rainbowkit/styles.css";
-import {
-  getDefaultWallets,
-  RainbowKitProvider,
-  darkTheme,
-} from "@rainbow-me/rainbowkit";
+import { getDefaultWallets, RainbowKitProvider, darkTheme } from "@rainbow-me/rainbowkit";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
-console.log(import.meta.env.VITE_ALCHEMY_ID);
 
 gsap.registerPlugin(ScrollTrigger);
 const { chains, provider } = configureChains(
-  [chain.polygonMumbai, chain.polygon],
-  [
-    alchemyProvider({ alchemyId: import.meta.env.VITE_ALCHEMY_ID }),
-    publicProvider(),
-  ]
+  [chain.polygon],
+  [alchemyProvider({ alchemyId: import.meta.env.VITE_ALCHEMY_ID }), publicProvider()]
 );
 
 const { connectors } = getDefaultWallets({
