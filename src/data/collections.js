@@ -16,5 +16,5 @@ export const collections = [{
     , description4: "THIS COLLECTION IS THE FIRST AVC PROJECT AND THUS THE MOST RARE. AVC IS GOING TO REDEFINE THE CREATIVE SCENE ON THE CONTINENT. WE INVITE YOU TO JOIN US ON THIS JOURNEY. THIS IS A PROJECT YOU DO NOT WANT TO MISS."
     , description5: "WE ARE GRATEFUL TO ALL SUPPORTERS AND PARTNERS."
     , description6: "JOIN THE DISCORD  HTTPS://DISCORD.COM/INVITE/AFRICANVALUABLES"
-    , description7: "The Ghost Diamond NFT is two collectibles in one: Original holders of this mystery NFT will have instant access to three exclusive new LeriQ tracks and will also receive via airdrop a randomly selected design from the Rough Diamond collection, developed with African Valuables Collective."
+    , description7: "The Ghost Diamond NFT is two collectibles in one: Original holders of this mystery NFT will have instant access to three exclusive new LeriQ tracks and will also receive via airdrop a randomly selected design from the Rough Diamond collection, developed with African Valuables Collective. Pre Sale: 12th August 2022 at 12AM WAT (Sold Out). Public Sale: 26th August 2022 at 12AM WAT"
 }]
