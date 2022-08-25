@@ -54,7 +54,7 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
       const platformOperator = new ethers.Contract(
         import.meta.env.VITE_SALE_OPERATOR_ADDRESS,
         Rough_Diamond_ABI);
-      try {
+    /*   try {
         const isWhitelisted = await platformOperator.connect(provider).whitelistedAddresses(
           address
         );
@@ -63,7 +63,7 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
         }
       } catch (err) {
         throw Error("You are not whitelisted to mint");
-      }
+      } */
       setMintState("Ready");
       const nfts = await getTokensToMint(numberishQuantity);
       setMintState("Approve");
