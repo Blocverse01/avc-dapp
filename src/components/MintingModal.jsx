@@ -54,7 +54,7 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
       const platformOperator = new ethers.Contract(
         import.meta.env.VITE_SALE_OPERATOR_ADDRESS,
         Rough_Diamond_ABI);
-    /*   try {
+       try {
         const isWhitelisted = await platformOperator.connect(provider).whitelistedAddresses(
           address
         );
@@ -62,8 +62,8 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
           throw Error("Your address is not whitelisted for this sale");
         }
       } catch (err) {
-        throw Error("You are not whitelisted to mint");
-      } */
+        throw Error("Sale Begins on 26th Aug 2022");
+      } 
       setMintState("Ready");
       const nfts = await getTokensToMint(numberishQuantity);
       setMintState("Approve");
