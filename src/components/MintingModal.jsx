@@ -46,7 +46,7 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
         throw Error("Enter an amount greater than zero");
       }
       if (numberishQuantity > maxPerWallet) {
-        throw Error("Max Mint of 3 NFTs");
+        throw Error("Max Mint of 5 NFTs");
       }
       if (!signer && !loadingSigner) {
         throw Error("Connect your wallet to mint");
