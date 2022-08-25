@@ -16,9 +16,7 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
   const { address } = useAccount();
   const { data: signer, isError, isLoading: loadingSigner } = useSigner();
   const provider = useProvider();
-  const mintingFee = ethers.utils.parseEther(
-    import.meta.env.VITE_MINT_FEE || "1"
-  );
+  const mintingFee = ethers.utils.parseEther(import.meta.env.VITE_MINT_FEE || "1");
   const maxPerWallet = import.meta.env.VITE_MAX_PER_WALLET || 3;
   const platformContractAddress = import.meta.env.VITE_SALE_OPERATOR_ADDRESS;
   const nftContract = import.meta.env.VITE_NFT_ADDRESS;
@@ -32,7 +30,7 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
     Ready: "bg-purple-500 ring-purple-900 ring-4",
     Approve: "bg-purple-700 ring-purple-600 ring-4",
     Minting: "bg-purple-900 ring-purple-300 ring-4",
-  }
+  };
   const handleChange = ({ target: { value: amount } }) => {
     setQuantity(amount);
   };
@@ -51,10 +49,8 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
       if (!signer && !loadingSigner) {
         throw Error("Connect your wallet to mint");
       }
-      const platformOperator = new ethers.Contract(
-        import.meta.env.VITE_SALE_OPERATOR_ADDRESS,
-        Rough_Diamond_ABI);
-       /* try {
+      const platformOperator = new ethers.Contract(import.meta.env.VITE_SALE_OPERATOR_ADDRESS, Rough_Diamond_ABI);
+      /* try {
         const isWhitelisted = await platformOperator.connect(provider).whitelistedAddresses(
           address
         );
@@ -98,17 +94,13 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
   return (
     <section
       style={{ backdropFilter: open ? "blur(5px)" : "none" }}
-      className={`overflow-hidden ${open
-        ? "fixed inset-0 transition-all duration-300 flex justify-center items-center z-[9999]"
-        : "h-0"
-        }`}
+      className={`overflow-hidden ${
+        open ? "fixed inset-0 transition-all duration-300 flex justify-center items-center z-[9999]" : "h-0"
+      }`}
     >
       <div className="Collection__mint-modal__content relative z-[9999]">
         <div className="text-right">
-          <button
-            onClick={() => setOpen(false)}
-            className="text-2xl md:text-4xl"
-          >
+          <button onClick={() => setOpen(false)} className="text-2xl md:text-4xl">
             <FontAwesomeIcon icon={faTimes} />
           </button>
         </div>
@@ -120,23 +112,19 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
             <div className="grid grid-cols-1 gap-2">
               <h3>
                 Minting Fee:{" "}
-                <span className="font-semibold">
-                  {ethers.utils.formatEther(info.mintingFee.toString())} MATIC
-                </span>
+                <span className="font-semibold">{ethers.utils.formatEther(info.mintingFee.toString())} MATIC</span>
               </h3>
               <h3>
-                Max NFTs Per Wallet:{" "}
-                <span className="font-semibold">{info.maxPerWallet}</span>
+                Max NFTs Per Wallet: <span className="font-semibold">{info.maxPerWallet}</span>
               </h3>
               <h3>
-                NFTs Available for Mint:{" "}
-                <span className="font-semibold">
-                  {import.meta.env.VITE_NFT_SUPPLY}
-                </span>
+                NFTs Available for Mint: <span className="font-semibold">{import.meta.env.VITE_NFT_SUPPLY}</span>
               </h3>
               <h3 className="break-words truncate overflow-ellipsis">
                 Contract Address:{" "}
-                <a target="_blank" rel="noreferrer"
+                <a
+                  target="_blank"
+                  rel="noreferrer"
                   className="text-blue-300 underline"
                   href={`${explorerURL}/token/${nftContract}`}
                 >
@@ -162,7 +150,7 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
                   disabled={mintState !== "Mint"}
                   onClick={async () => await mintNFTs()}
                   type="button"
-                  className={`Collection-group__mint-btn mt-0 text-base lg:text-lg h-[46px] md:h-[60px] ${buttonColors[mintState]} transition duration-500 ease-in-out`}
+                  className={`Collection-group__buy-btn mt-0 text-base lg:text-lg h-[46px] md:h-[60px] ${buttonColors[mintState]} transition duration-500 ease-in-out`}
                 >
                   {mintState} {mintState !== "Mint" && <BouncingDotsLoader />}
                 </button>
