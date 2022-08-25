@@ -171,7 +171,7 @@ function Home() {
 
       <Element name="roadMap">
         <section className="page-section-padding" id="roadMap">
-          <h2 className="page-section-header">Timeline</h2>
+          <h2 className="page-section-header">Next Launch Timeline</h2>
           <RoadMap />
         </section>
       </Element>

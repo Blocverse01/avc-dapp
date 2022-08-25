@@ -21,10 +21,10 @@ const teamMembers = [
 
 {
   name: "Cairon Clarke",
-  role: "COO",
+  role: "Chief Operations Officer",
   picture: Cairon,
   description:
-    "Tokenomics Expert 10 years banking experience,An experienced technical implementation consultant with 10 years experience specialising in supporting global financial institutions with the delivery of bespoke wealth and investment management systems. Deep expertise on analysis, architecture and development of Blockchain Solutions, distributed computing, Smart contracts and DApps on Ethereum blockchain, Cairon has helped clients translate complex business requirements into functional on chain capabilities.Worked with leading financial services and banking groups across the UK, South Africa and Australia, providing detailed technical analysis and subject matter expertise. A panel speaker at events with PWC, Barclays Eagle Labs and Africa’s Property Investment Summit whilst being a member of Google for Startups and Cambridge Blockchain Society, Cairon is an early crypto investor and lover of decentralised finance. "
+    "Tokenomics Expert, 10 years banking and tradfi. An experienced technical implementation consultant with 10 years experience specialising in supporting global financial institutions with the delivery of bespoke wealth and investment management systems. Deep expertise on analysis and architecture of Blockchain Solutions, distributed computing, Smart contracts and DApps on Ethereum blockchain, Cairon has helped clients translate complex business requirements into functional on chain capabilities. He has worked with leading financial services and banking groups across the UK, South Africa and Australia, providing detailed technical analysis and subject matter expertise. A panel speaker at events with PWC, NFT.London and Africa’s Property Investment Summit whilst being a member of Google for Startups and Cambridge Blockchain Society, Cairon is an early crypto investor and lover of decentralised finance. "
    ,
   headline: "COO",
 

@@ -53,13 +53,13 @@ function App() {
       return;
     }
     window.scrollTo(0, 0);
-  }, [location]);
+  }, [location]); 
   const navItems = [
     { title: "Getting Started", to: "gettingStarted" },
     { title: "Our Collections", to: "ourCollection" },
     { title: "Our Roadmap", to: "roadMap" },
     { title: "Our Partners", to: "Partners" },
-    { title: "Contact Us", to: "contactUs" },
+    { title: "FAQs", to: "Faq" },
   ];
   const isHome = location.pathname === "/";
   const hideElipsis = !isHome ? "hidden" : "";
