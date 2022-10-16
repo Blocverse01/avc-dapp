@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import instagram from "./assets/instagram.png";
 import RoadMap from "./components/RoadMap";
 import Partners from "./components/Partners";
+import Newsletter from "./components/Newsletter";
 import discord from "./assets/discord.svg";
 import twitter from "./assets/twitter.png";
 import { faChevronDown, faQ } from "@fortawesome/free-solid-svg-icons";
@@ -61,10 +62,18 @@ function Home() {
           </article>
         </div>
         <div className="md:flex w-fit mt-10 md:w-[410px] lg:w-[466px] justify-between mx-auto ">
-          <a href="https://fbgkk0t0oct.typeform.com/to/UlplMkQn" target="_blank" className="text-white  bg-[#7F1C97] hero-btns ">
+          <a
+            href="https://fbgkk0t0oct.typeform.com/to/UlplMkQn"
+            target="_blank"
+            className="text-white  bg-[#7F1C97] hero-btns "
+          >
             Become a Creator
           </a>
-          <a href="https://fbgkk0t0oct.typeform.com/to/HtRycNXz" target="_blank" className=" md:mt-0 mt-2 w-fit  glass-bg hero-btns">
+          <a
+            href="https://fbgkk0t0oct.typeform.com/to/HtRycNXz"
+            target="_blank"
+            className=" md:mt-0 mt-2 w-fit  glass-bg hero-btns"
+          >
             Join the Team
           </a>
         </div>
@@ -196,7 +205,7 @@ function Home() {
       </Element>
 
       <Element name="faq">
-        <section class="page-section-padding px-4 md:px-20" id="Faq">
+        <section className="page-section-padding px-4 md:px-20" id="Faq">
           <h2 className="page-section-header  mb-[33.46px] lg:mb-[3.1169rem]">
             Frequently asked questions
           </h2>
@@ -205,6 +214,10 @@ function Home() {
             <Faq key={index} question={question} answer={answer} />
           ))}
         </section>
+      </Element>
+
+      <Element name="contactUs">
+        <Newsletter />
       </Element>
 
       <footer className="App-footer">
@@ -233,13 +246,12 @@ function Home() {
               </div>
             </div>
             <a href="https://discord.com/invite/africanvaluables">
-            <img
-              src={discord}
-              alt="join discord"
-              className="App-footer-social-image w-[38.62px] h-[28.97px] lg:w-[137.56px] lg:h-[70.68px] xl:w-[167.56px] xl:h-[100.68px]"
-            />
+              <img
+                src={discord}
+                alt="join discord"
+                className="App-footer-social-image w-[38.62px] h-[28.97px] lg:w-[137.56px] lg:h-[70.68px] xl:w-[167.56px] xl:h-[100.68px]"
+              />
             </a>
-            
           </div>
           <div className="App-footer-socials-item">
             <div>

@@ -14,7 +14,7 @@ export default function MintingModal({ open, setOpen, refreshGatePass }) {
   const [quantity, setQuantity] = useState("");
   const [mintState, setMintState] = useState("Mint");
   const { address } = useAccount();
-  const { data: signer, isError, isLoading: loadingSigner } = useSigner();
+  const { data: signer, isError, isLoading: loadingSigner } = useSigner(); 
   const provider = useProvider();
   const mintingFee = ethers.utils.parseEther(import.meta.env.VITE_MINT_FEE || "1");
   const maxPerWallet = import.meta.env.VITE_MAX_PER_WALLET || 3;

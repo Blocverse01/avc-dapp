@@ -8,7 +8,12 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import "react-loading-skeleton/dist/skeleton.css";
 import "animate.css/animate.min.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { Link as ScrollLink, Events, scroller, animateScroll as scroll } from "react-scroll";
+import {
+  Link as ScrollLink,
+  Events,
+  scroller,
+  animateScroll as scroll,
+} from "react-scroll";
 import { useQuery } from "./hooks/useQuery";
 import { gsap } from "gsap";
 import WalletConnect from "./components/WalletConnect";
@@ -34,7 +39,10 @@ function App() {
       scrollFunction();
     };
     function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
         mybutton.style.display = "block";
       } else {
         mybutton.style.display = "none";
@@ -53,7 +61,7 @@ function App() {
       return;
     }
     window.scrollTo(0, 0);
-  }, [location]); 
+  }, [location]);
   const navItems = [
     { title: "Getting Started", to: "gettingStarted" },
     { title: "Our Collections", to: "ourCollection" },
@@ -103,9 +111,16 @@ function App() {
                   : "w-0 h-0"
               } overflow-y-hidden overflow-x-hidden lg:w-full lg:static z-0 lg:h-auto`}
             >
-              <li className={`text-right mb-12 ${modal ? "" : "hidden"} lg:hidden`}>
+              <li
+                className={`text-right mb-12 ${
+                  modal ? "" : "hidden"
+                } lg:hidden`}
+              >
                 <button onClick={() => setModalOpen(false)}>
-                  <FontAwesomeIcon icon={faTimes} className="text-3xl text-white" />
+                  <FontAwesomeIcon
+                    icon={faTimes}
+                    className="text-3xl text-white"
+                  />
                 </button>
               </li>
               {navItems.map((item, index) => (
@@ -118,7 +133,13 @@ function App() {
                   } cursor-pointer hover:underline`}
                 >
                   {isHome ? (
-                    <ScrollLink to={item.to} spy={true} smooth={true} offset={50} duration={500}>
+                    <ScrollLink
+                      to={item.to}
+                      spy={true}
+                      smooth={true}
+                      offset={50}
+                      duration={500}
+                    >
                       {item.title}
                     </ScrollLink>
                   ) : (
@@ -128,11 +149,21 @@ function App() {
               ))}
             </ul>
           </nav>
-          <div className={`flex justify-center flex-1 ${modal ? "hidden" : ""} lg:hidden`}>
+          <div
+            className={`flex justify-center flex-1 ${
+              modal ? "hidden" : ""
+            } lg:hidden`}
+          >
             <WalletConnect />
           </div>
           <button className="mobile-only" onClick={() => setModalOpen(true)}>
-            <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              width="23"
+              height="16"
+              viewBox="0 0 23 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <rect width="23" height="2" fill="white" />
               <rect y="7" width="23" height="2" fill="white" />
               <rect y="14" width="23" height="2" fill="white" />
@@ -147,7 +178,11 @@ function App() {
         <Outlet />
       </main>
       <div>
-        <img src={curve} className="transition-all duration-300 ease-in-out Home-curve" alt="curve" />
+        <img
+          src={curve}
+          className="transition-all duration-300 ease-in-out Home-curve"
+          alt="curve"
+        />
       </div>
       <div className="App-ellipsis-1"></div>
       <div className="App-ellipsis-2"></div>
