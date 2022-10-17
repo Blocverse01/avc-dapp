@@ -10,7 +10,30 @@ export default function Newsletter() {
   const [userDetails, setUserDetails] = useState(defaultUserDetails);
 
   const sendNewsLetter = async () => {
-    const { data } = await httpClient.post(`$/{}`);
+    const formID = import.meta.env.VITE_CONVERTKIT_FORM_ID;
+    try {
+      const { data } = await httpClient.post(`/forms/${formID}/subscribe`, {
+        email: userDetails.email,
+        name: userDetails.name,
+        api_key: import.meta.env.VITE_CONVERTKIT_API_KEY,
+      });
+      if (data.subscription) {
+        setUserDetails(defaultUserDetails);
+        Swal.fire({
+          title: "Confirmation email sent!",
+          text: "Please check your email to confirm your subscription",
+          type: "success",
+        });
+        return;
+      }
+      throw new Error("Error sending confirmation email");
+    } catch (err) {
+      Swal.fire({
+        title: "Something happened!",
+        text: "Please verify that your email is correct and try again.",
+        type: "info",
+      });
+    }
   };
 
   const handleSubmit = async (e) => {
