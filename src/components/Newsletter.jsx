@@ -22,7 +22,7 @@ export default function Newsletter() {
         Swal.fire({
           title: "Confirmation email sent!",
           text: "Please check your email to confirm your subscription",
-          type: "success",
+          icon: "success",
         });
         return;
       }
@@ -31,7 +31,7 @@ export default function Newsletter() {
       Swal.fire({
         title: "Something happened!",
         text: "Please verify that your email is correct and try again.",
-        type: "info",
+        icon: "info",
       });
     }
   };
@@ -48,7 +48,7 @@ export default function Newsletter() {
     <section id="contactUs" className="page-section-padding">
       <h2 className="page-section-header">Subscribe to our Newsletter </h2>
       <form onSubmit={handleSubmit} className="Home-contact-form">
-        <div>
+        <div className="md:col-span-2">
           <label htmlFor="first-name" className="Home-contact-form-label">
             Your Name
           </label>
