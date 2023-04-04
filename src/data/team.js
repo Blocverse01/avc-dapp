@@ -1,7 +1,6 @@
 import Leriq from "./teamImages/LeriQ.png";
 import Cairon from "./teamImages/Cairon1.jpeg";
 import Lehle from "./teamImages/Lehle1.jpg";
-import Daniel from "./teamImages/Daniel.jpeg";
 import Kweku from "./teamImages/Kweku1.jpg";
 import Folusho from "./teamImages/Folusho.jpeg";
 import Kojo from "./teamImages/Kojo.jpeg";
@@ -43,7 +42,7 @@ const teamMembers = [
 
 },
 
-{
+/* {
     name: "Daniel Bloch",
     role: "Executive Advisor",
     picture: Daniel,
@@ -53,7 +52,7 @@ const teamMembers = [
     headline: "Executive Advisor",
 
 
-},
+}, */
 
 {
   name: "Kweku Essien",
