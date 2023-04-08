@@ -10,8 +10,7 @@ export default function RoadMap() {
           <div className="cd-timeline-content glass-card">
             <h2>WHITELIST SALE 12th AUGUST</h2>
             <p>
-              Whitelist sale of the Rough Diamonds Collection will begin on the 29th of July, contact the AVC team for
-              more infomation
+            Pre Sale: 12th August 2022 at 12AM WAT (Sold Out)
             </p>
           </div>
         </div>
@@ -20,7 +19,7 @@ export default function RoadMap() {
           <div className="cd-timeline-content glass-card">
             <h2>FULL SALE (credit card) 26th AUGUST</h2>
             <p>
-              The full sale of the Rough Diamonds Collection will begin on the 19th of August and will be avaliable for
+              The full sale of the Rough Diamonds Collection will begin on the 26th of August and will be avaliable for
               purchase on the CENT market place.
             </p>
           </div>
@@ -31,7 +30,7 @@ export default function RoadMap() {
             <h2>FULL SALE (crypto) 26th AUGUST</h2>
             <p>
               The Next an final phase of the Rough Diamonds Collection NFT sales will be done on the offical AVC website
-              where the NFT will be bought with crypto.
+              where the NFT will be bought with 70 Matic.
             </p>
           </div>
         </div>
