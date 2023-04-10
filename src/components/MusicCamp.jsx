@@ -34,7 +34,9 @@ export default function MusicCamp() {
       </div>
 
       <div className="px-6">
-        <h1 className="Home-hero-header skewElem mt-32">FEATURED ARTISTES</h1>
+        <h1 className="Home-hero-header skewElem mt-24 md:mt-32">
+          FEATURED ARTISTES
+        </h1>
         <div className="mt-16 grid grid-cols-2 lg:grid-cols-3  gap-8 glass-bg  p-6 ">
           <img src={teni} className="scale-90" />
           <img src={khanyisa} className="scale-90" />
