@@ -72,11 +72,14 @@ function Home() {
           <a
             href="https://fbgkk0t0oct.typeform.com/to/HtRycNXz"
             target="_blank"
-            className=" md:mt-0 mt-2 w-fit  glass-bg hero-btns"
+            className=" md:mt-0 mt-2 w-fit  bg-[#7F1C97] hero-btns"
           >
             Join the Team
           </a>
         </div>
+        <Link to="/music-camp" className=" glass-bg hero-btns w-fit mt-8">
+          AVC Music Camp
+        </Link>
       </div>
       <Element name="gettingStarted">
         <section id="gettingStarted" className="page-section-padding">
