@@ -17,7 +17,7 @@ export default function MusicCamp() {
     <div>
       <div className="w-full z-10 relative">
         <h1 className="Home-hero-header skewElem mt-24">
-          AVCxCASSAVA MUSIC CAMP
+          AVC MUSIC CAMP
         </h1>
 
         <div className=" w-fit mx-auto  scale-75">
@@ -28,7 +28,7 @@ export default function MusicCamp() {
           African Valuables in conjunction with Cassava Network presents the
           first ever NFT Music Camp, happening on the 12th-16th of April,2023 in
           Lagos, Nigeria which aims to develop and empower emerging talent in
-          the Nigeria music industry ,providing them with tools ,knowledge and
+          the African music industry ,providing them with tools ,knowledge and
           network they need to succeed in an evolving industry.
         </p>
       </div>

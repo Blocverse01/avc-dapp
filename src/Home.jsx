@@ -78,7 +78,7 @@ function Home() {
           </a>
         </div>
         <Link to="/music-camp" className=" glass-bg hero-btns w-fit mt-8">
-          AVC Music Camp
+          AVC Music Camp🎶👉🏾
         </Link>
       </div>
       <Element name="gettingStarted">
