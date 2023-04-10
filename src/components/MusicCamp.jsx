@@ -15,12 +15,12 @@ import ucee from "../assets/ucee.png";
 export default function MusicCamp() {
   return (
     <div>
-      <div className="w-full">
+      <div className="w-full z-10 relative">
         <h1 className="Home-hero-header skewElem mt-24">
           AVCxCASSAVA MUSIC CAMP
         </h1>
 
-        <div className="z-10 w-fit mx-auto relative scale-75">
+        <div className=" w-fit mx-auto  scale-75">
           <img src={avcCamp} alt="Picture" />
         </div>
 
