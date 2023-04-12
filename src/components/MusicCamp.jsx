@@ -41,7 +41,7 @@ export default function MusicCamp() {
           FEATURED ARTISTES
         </h1>
         <p className=" px-8 lg:text-center mx-auto w-auto lg:w-[935px] text-white font-regular-text text-[14px] md:text-[16px] lg:text-[22px] ">
-          Collect the images below as free NFTs to get early access to the  MUSIC camp!
+        Limited Edition MUSIC Camp Artist NFTs. Collect your favorite artist to gain early access to the Music Camp EP NFT Drop.
           </p>
         <div className="mt-16 grid grid-cols-2 lg:grid-cols-3  gap-8 glass-bg  p-6 ">
           <img src={teni} className="scale-90" />
