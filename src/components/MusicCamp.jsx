@@ -16,23 +16,22 @@ import leriq from "../assets/leriq-camp.jpg";
 import duppy from "../assets/duppy.jpg";
 import boj from "../assets/boj.jpg";
 
-
 export default function MusicCamp() {
   return (
     <div>
       <div className="w-full z-10 relative">
-        <h1 className="Home-hero-header skewElem mt-24">
-          AVC MUSIC CAMP
-        </h1>
+        <h1 className="Home-hero-header skewElem mt-24">AVC MUSIC CAMP</h1>
 
         <div className=" w-fit mx-auto  scale-75">
           <img src={avcCamp} alt="Picture" />
         </div>
 
         <p className=" px-8 lg:text-center mx-auto w-auto lg:w-[935px] text-white font-regular-text text-[14px] md:text-[16px] lg:text-[22px] ">
-        African Valuables in conjunction with Cassava Network presents the first ever NFT Music Camp,
-        happening on the 12th-16th of April, 2023 in Lagos, Nigeria which aims to develop and empower emerging talent in the African music industry,
-        providing them with tools, knowledge and network they need to succeed in an evolving industry.
+          African Valuables in conjunction with Cassava Network presents the
+          first ever NFT Music Camp, happening on the 12th-16th of April, 2023
+          in Lagos, Nigeria which aims to develop and empower emerging talent in
+          the African music industry, providing them with tools, knowledge and
+          network they need to succeed in an evolving industry.
         </p>
       </div>
 
@@ -41,20 +40,20 @@ export default function MusicCamp() {
           FEATURED ARTISTES
         </h1>
         <p className=" px-8 lg:text-center mx-auto w-auto lg:w-[935px] text-white font-regular-text text-[14px] md:text-[16px] lg:text-[22px] ">
-        Limited Edition MUSIC Camp Artist NFTs. Collect your favorite artist to gain early access to the Music Camp EP NFT Drop.
-          </p>
-        <div className="mt-16 grid grid-cols-2 lg:grid-cols-3  gap-8 glass-bg  p-6 ">
-          <img src={teni} className="scale-90" />
-          <img src={leriq} className="scale-90" />
-          <img src={khanyisa} className="scale-90" />
-          <img src={raspy} className="scale-90" />
-          <img src={shun} className="scale-90" />
-          <img src={telz} className="scale-90" />
-          <img src={ucee} className="scale-90" />
-          <img src={boj} className="scale-90" />
-          <img src={tomi} className="scale-90" />
-          <img src={duppy} className="scale-90" />
-          
+          Limited Edition MUSIC Camp Artist NFTs. Collect your favorite artist
+          to gain early access to the Music Camp EP NFT Drop.
+        </p>
+        <div className="mt-16 grid grid-cols-2 lg:grid-cols-3  gap-4 glass-bg  p-6 ">
+          <img src={teni} className=" scale-95 " />
+          <img src={leriq} className=" scale-95 " />
+          <img src={khanyisa} className=" scale-95 " />
+          <img src={raspy} className=" scale-95 " />
+          <img src={shun} className=" scale-95 " />
+          <img src={telz} className=" scale-95 " />
+          <img src={ucee} className=" scale-95 " />
+          <img src={boj} className=" scale-95 " />
+          <img src={tomi} className=" scale-95 " />
+          <img src={duppy} className=" scale-95 " />
         </div>
       </div>
 
