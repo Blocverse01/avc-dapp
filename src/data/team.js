@@ -3,7 +3,7 @@ import Cairon from "./teamImages/Cairon1.jpeg";
 import Lehle from "./teamImages/Lehle1.jpg";
 import Kweku from "./teamImages/Kweku1.jpg";
 import Folusho from "./teamImages/Folusho.jpeg";
-import Kojo from "./teamImages/Kojo.jpeg";
+import Varney from "./teamImages/Varney.jpeg";
 
 const teamMembers = [
 {
@@ -20,12 +20,12 @@ const teamMembers = [
 
 {
   name: "Cairon Clarke",
-  role: "Chief Operations Officer",
+  role: "Chief Technical  Officer",
   picture: Cairon,
   description:
     "Tokenomics Expert, 10 years banking and tradfi. An experienced technical implementation consultant with 10 years experience specialising in supporting global financial institutions with the delivery of bespoke wealth and investment management systems. Deep expertise on analysis and architecture of Blockchain Solutions, distributed computing, Smart contracts and DApps on Ethereum blockchain, Cairon has helped clients translate complex business requirements into functional on chain capabilities. He has worked with leading financial services and banking groups across the UK, South Africa and Australia, providing detailed technical analysis and subject matter expertise. A panel speaker at events with PWC, NFT.London and Africa’s Property Investment Summit whilst being a member of Google for Startups and Cambridge Blockchain Society, Cairon is an early crypto investor and lover of decentralised finance. "
    ,
-  headline: "COO",
+  headline: "CTO",
 
 
 },
@@ -79,13 +79,13 @@ const teamMembers = [
 },
 
 {
-  name: "Kojo Owiredu",
-  role: "Community Manager",
-  picture: Kojo,
+  name: "Varney Blamah",
+  role: "Chief Operating Officer",
+  picture: Varney,
   description:
-    "Certified Business Analysis professional with over five years experience in e-commerce, Finance and Robotic Process automation solutions. Content creator in music, arts and entertainment."
+    "At 24, Varney Blamah has years of experience navigating both tech startups and the music scene. With a tech hat, he’s deep into data science, and on the music side, he’s  globetrotting as an A&R for artists worldwide. Now, as COO of African Valuable Collective, Varney focuses on bridging gaps—connecting African talent, be it in music, sports, or the arts, to opportunities both at home and abroad. It's a fusion of his tech and music worlds, creating a unique path that's very Varney."
    ,
-  headline: "CEO",
+  headline: "COO",
 
 
 },
