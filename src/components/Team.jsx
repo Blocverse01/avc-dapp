@@ -3,7 +3,7 @@ import teamMembers from "../data/team";
 
 export default function Team() {
   return (
-    <section className="grid xl:grid-cols-4 grid-cols-1 md:grid-cols-2  gap-6 px-20">
+    <section className="grid xl:grid-cols-3 grid-cols-1 md:grid-cols-2  gap-6 px-20">
       {teamMembers.map((member, index) => (
         <Link
           to={`/team/${member.name.split(" ").join("-").toLowerCase()}`}
